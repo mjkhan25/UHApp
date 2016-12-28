@@ -22,11 +22,11 @@ export class departmentComponent {
   {
 
 //Upcoming Card// Today Card
-jQuery(".departmentList .upcomingClick").on('click', function () {
-   jQuery('.upcomingClick').not(this).removeClass("upcomingDown");
+jQuery(".department .upcomingClick").on('click', function () {
+   jQuery('.department .upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
-     jQuery(".upcomingClick").removeClass("upcomingDown");
+     jQuery(".department .upcomingClick").removeClass("upcomingDown");
   } else {
     jQuery(this).closest('ion-card').find('.upcomingClick').addClass("upcomingDown");
      

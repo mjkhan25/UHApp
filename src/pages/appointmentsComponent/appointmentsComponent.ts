@@ -65,7 +65,7 @@ jQuery(document).on('click',".appointment .upcomingClick", function () {
         
     });
 
-jQuery(".upcomingClick:first").trigger('click');
+jQuery(".appointment .upcomingClick:first").trigger('click');
   }
 
 
