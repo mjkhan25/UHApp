@@ -22,7 +22,7 @@ export class departmentComponent {
   {
 
 //Upcoming Card// Today Card
-jQuery(".upcomingClick").on('click', function () {
+jQuery(".departmentList .upcomingClick").on('click', function () {
    jQuery('.upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {

@@ -48,11 +48,11 @@ export class appointmentsComponent {
 
 //Upcoming Card
 
-jQuery(".upcomingClick").on('click', function () {
-   jQuery('.upcomingClick').not(this).removeClass("upcomingDown");
+jQuery(document).on('click',".appointment .upcomingClick", function () {
+   jQuery('.appointment .upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
-     jQuery(".upcomingClick").removeClass("upcomingDown");
+     jQuery(".appointment .upcomingClick").removeClass("upcomingDown");
   } else {
     jQuery(this).closest('ion-card').find('.upcomingClick').addClass("upcomingDown");
      
