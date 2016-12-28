@@ -23,6 +23,7 @@ export class departmentComponent {
 
 //Upcoming Card// Today Card
 jQuery('.department .upcomingClick').on('click', function () {
+  console.log(this);
    jQuery('.department .upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
@@ -32,9 +33,9 @@ jQuery('.department .upcomingClick').on('click', function () {
      
   }
   
-        var $ans = jQuery(this).next(".wrapBox");
+        var $ans = jQuery(this).next(".department .wrapBox");
         $ans.slideToggle();
-        jQuery(".wrapBox").not($ans).slideUp();
+        jQuery(".department .wrapBox").not($ans).slideUp();
 
         
     });

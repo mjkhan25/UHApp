@@ -58,14 +58,14 @@ jQuery('.appointment .upcomingClick').on('click', function () {
      
   }
   
-        var $ans = jQuery(this).next(".wrapBox");
+        var $ans = jQuery(this).next(".appointment .wrapBox");
         $ans.slideToggle();
-        jQuery(".wrapBox").not($ans).slideUp();
+        jQuery(".appointment .wrapBox").not($ans).slideUp();
 
         
     });
 
-jQuery(".appointment .upcomingClick:first").trigger('click');
+  jQuery(".appointment .upcomingClick:first").trigger('click');
   }
 
 
