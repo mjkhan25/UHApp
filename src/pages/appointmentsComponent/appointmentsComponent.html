@@ -12,7 +12,7 @@
   <div class="">
   <h4 class="appointLable">Today</h4>
 
-<ion-card class="appontCard" *ngFor="let appointment of appointment" style="margin-bottom:15px;">
+<!--<ion-card class="appontCard" *ngFor="let appointment of appointment" >
    <ion-item>
      <ion-avatar item-left>
     <img src="{{appointment.imgPath}}">
@@ -34,37 +34,40 @@
        <p> <strong>Appointment Time:</strong> {{appointment.appointmentTime}} </p>
        </div>
     </ion-card-content>
-  </ion-card>
-      <p>&nbsp;</p>
+  </ion-card>-->
 
- 
-<ion-card class="appontCard">
+  <ion-card class="appontCard">
 <ion-item>
     <ion-avatar item-left>
      <img src="assets/img/thum1.png">
     </ion-avatar>
     <ion-label>
-      <h2>Dr. Nicholas Bambakidis</h2>
+ <h2>Dr. Nicholas Bambakidis</h2>
     <p>Neurosurgeon</p>
-      </ion-label>
-    
-    <ion-label item-right class="cardButton">
+</ion-label>
+      <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
     </ion-label>
-
+   
   </ion-item>
+
 <div class="upcomingClick"></div>
 
-  <ion-card-content class="wrapBox">
+    <ion-card-content class="wrapBox" >
     <div class="togClass">
     <p> <strong>Department:</strong> Neurological Surgery </p>
      <p> <strong>Location:</strong> Bolwell 5th Floor </p>
       <p> <strong>Date:</strong> November 17, 2016 </p>
        <p> <strong>Appointment Time:</strong> 10:00am </p>
        </div>
-      
-         </ion-card-content>
+       
+       
+  </ion-card-content>
+
+
+
 </ion-card>
+     
 
  <h4 class="appointLable hadTopspace">Upcoming</h4>
 

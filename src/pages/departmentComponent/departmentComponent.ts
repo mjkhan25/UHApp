@@ -22,7 +22,7 @@ export class departmentComponent {
   {
 
 //Upcoming Card// Today Card
-jQuery(".department .upcomingClick").on('click', function () {
+jQuery('.department .upcomingClick').on('click', function () {
    jQuery('.department .upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
@@ -35,7 +35,11 @@ jQuery(".department .upcomingClick").on('click', function () {
         var $ans = jQuery(this).next(".wrapBox");
         $ans.slideToggle();
         jQuery(".wrapBox").not($ans).slideUp();
+
+        
     });
+
+//jQuery(".appointment .upcomingClick:first").trigger('click');
 
 
   }

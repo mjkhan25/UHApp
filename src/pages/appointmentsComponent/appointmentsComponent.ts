@@ -48,7 +48,7 @@ export class appointmentsComponent {
 
 //Upcoming Card
 
-jQuery(document).on('click',".appointment .upcomingClick", function () {
+jQuery('.appointment .upcomingClick').on('click', function () {
    jQuery('.appointment .upcomingClick').not(this).removeClass("upcomingDown");
          
   if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
