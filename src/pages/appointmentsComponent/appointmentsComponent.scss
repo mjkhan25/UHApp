@@ -1,0 +1,33 @@
+appointments {
+}
+
+.appontCard h2{font-family: fru-tiger-bold; font-size:18px; color:#444444}
+.appontCard p{ font-family: fru-tiger-roman;}
+
+
+
+.appointLable{font-size:18px; color:#636466; font-family: fru-tiger-light; }
+
+.cardArowHold{width:100%; text-align: center; height:13px;}
+.cardArowHold .btnUp{ background: url('../assets/img/toglArrow.png1') no-repeat 0 0; width: 50px; height: 26px; display: inline-block;}
+.cardArowHold .btnDown{ background: url('../assets/img/toglArrowDwn1.png') no-repeat 0 0; width: 50px; height: 26px; display: inline-block;}
+.togClass{padding-bottom:10px;}
+.hadTopspace{padding-top:10px;}
+
+.wrapBox {  display:none; padding-top:5px;}
+.card {position:relative; padding-bottom: 15px; }
+.todayClick{position:absolute; bottom:0; left:45%; background: url('../assets/img/toglArrow.png') no-repeat 0 0; width: 50px; height: 26px;cursor:pointer; }
+.btnClickDown {  background: url('../assets/img/detArrow.png') no-repeat 40px 2px; left:90px;}
+.btnClickDown:before {  content: "Details"; color:#ef3a42; font-size:12px;}
+
+
+.upcomingClick{position:absolute; bottom:0;background: url('../assets/img/detArrow.png') no-repeat 40px 2px; left:90px;cursor:pointer;padding-right: 25px; padding-bottom: 5px;}
+.upcomingClick:before {  content: "Details"; color:#ef3a42; font-size:12px;}
+.upcomingDown{position:absolute; bottom:0; left:45%; background: url('../assets/img/toglArrow.png') no-repeat 0 0; width: 50px; height: 26px;cursor:pointer; }
+.upcomingDown:before{ content: "";}
+
+.cardButton{position:absolute; right:0px;}
+
+
+
+  

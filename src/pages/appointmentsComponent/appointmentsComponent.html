@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Appointments</ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content padding class="">
+
+  <div class="">
+  <h4 class="appointLable">Today</h4>
+
+<ion-card class="appontCard" *ngFor="let appointment of appointment" style="margin-bottom:15px;">
+   <ion-item>
+     <ion-avatar item-left>
+    <img src="{{appointment.imgPath}}">
+    </ion-avatar>
+     <ion-label>
+      <h2> {{appointment.name}}</h2>
+    <p> {{appointment.designation}}</p>
+      </ion-label>
+      <ion-label item-right class="cardButton">
+    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    </ion-label>
+  </ion-item>
+  <div class="upcomingClick active"></div>
+  <ion-card-content class="wrapBox" style="display:block">
+    <div class="togClass">
+    <p> <strong>Department:</strong>  {{appointment.department}} </p>
+     <p> <strong>Location:</strong> {{appointment.location}} </p>
+      <p> <strong>Date:</strong> {{appointment.dateTwo}} </p>
+       <p> <strong>Appointment Time:</strong> {{appointment.appointmentTime}} </p>
+       </div>
+    </ion-card-content>
+  </ion-card>
+      <p>&nbsp;</p>
+
+ 
+<ion-card class="appontCard">
+<ion-item>
+    <ion-avatar item-left>
+     <img src="assets/img/thum1.png">
+    </ion-avatar>
+    <ion-label>
+      <h2>Dr. Nicholas Bambakidis</h2>
+    <p>Neurosurgeon</p>
+      </ion-label>
+    
+    <ion-label item-right class="cardButton">
+    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    </ion-label>
+
+  </ion-item>
+<div class="upcomingClick"></div>
+
+  <ion-card-content class="wrapBox">
+    <div class="togClass">
+    <p> <strong>Department:</strong> Neurological Surgery </p>
+     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
+      <p> <strong>Date:</strong> November 17, 2016 </p>
+       <p> <strong>Appointment Time:</strong> 10:00am </p>
+       </div>
+      
+         </ion-card-content>
+</ion-card>
+
+ <h4 class="appointLable hadTopspace">Upcoming</h4>
+
+
+<ion-card class="appontCard">
+<ion-item>
+    <ion-avatar item-left>
+     <img src="assets/img/thum2.png">
+    </ion-avatar>
+    <ion-label>
+ <h2>Dr. Jill Dietz</h2>
+    <p><strong>Date:</strong> December 10, 2016</p>
+</ion-label>
+      <ion-label item-right class="cardButton">
+    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    </ion-label>
+   
+  </ion-item>
+
+<div class="upcomingClick"></div>
+
+    <ion-card-content class="wrapBox" >
+    <div class="togClass">
+    <p> <strong>Department:</strong> Neurological Surgery </p>
+     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
+      <p> <strong>Date:</strong> November 17, 2016 </p>
+       <p> <strong>Appointment Time:</strong> 10:00am </p>
+       </div>
+       
+       
+  </ion-card-content>
+
+
+
+</ion-card>
+<p></p>
+<ion-card class="appontCard">
+<ion-item>
+    <ion-avatar item-left>
+     <img src="assets/img/thum3.png">
+    </ion-avatar>
+    <ion-label>
+     <h2>Dr. James Rowbottom</h2>
+    <p><strong>Date:</strong> January 3, 2016</p>
+    </ion-label>
+         <ion-label item-right class="cardButton">
+    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    </ion-label>
+  </ion-item>
+
+<div class="upcomingClick"></div>
+<ion-card-content class="wrapBox">
+    <div class="togClass" >
+    <p> <strong>Department:</strong> Neurological Surgery </p>
+     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
+      <p> <strong>Date:</strong> November 17, 2016 </p>
+       <p> <strong>Appointment Time:</strong> 10:00am </p>
+       </div>
+       
+       
+  </ion-card-content>
+
+  
+</ion-card>
+
+
+</div>
+ <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->
+</ion-content>

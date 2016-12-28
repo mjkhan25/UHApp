@@ -1,0 +1,34 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>LOGIN</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding class="loginBg">
+<div class="HMLogoBox"><img src="assets/img/HMLogo.png"></div>
+  <div class="loginMidBox">
+   <div class="list">
+        <form (ngSubmit)="formSubmit()">
+            <label class="item item-input">
+              <input type="text" placeholder="Username" class="LoginInput" required  [(ngModel)]="data.Username" name="user">
+            </label>
+            <label class="item item-input">
+              <input type="password" class="LoginInput" placeholder="Password" required  [(ngModel)]="data.Password" name="pass" >
+            </label>
+            <label class="item item-input textAlign">
+              <button type="submit" ion-button  class="btnRed">Log In</button>
+            </label>
+           </form>
+
+            <label class="item item-input textAlign">
+             <span class="input-label" ><a href="#" (click)="directoryDetails()" class="loginLink">Continue as Guest</a> </span>
+             </label>
+              
+             
+          </div>
+</div>
+ <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->
+</ion-content>

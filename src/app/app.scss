@@ -1,0 +1,93 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: fru-tiger-bold;
+    src: url(../assets/fonts/FrutigerLTStd-Bold.otf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: fru-tiger-light;
+    src: url(../assets/fonts/FrutigerLTStd-Light.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: fru-tiger;
+    src: url(../assets/fonts/FrutigerLTStd-Cn.otf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: fru-tiger-roman;
+    src: url(../assets/fonts/FrutigerLTStd-Roman.otf);
+    font-weight: 400;
+}
+body{ font-family: fru-tiger-roman!important;}
+
+/*Global css here */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #343331;
+}
+.paddingTop15{padding-top:15px;}
+/*for scroll bar hide*/
+::-webkit-scrollbar {  display: none;}
+
+.header .toolbar-title{width:90%}
+
+.mapRedBtn{background-color:#ef3a42; border-radius:5px; padding:7px 15px; font-family: fru-tiger-light; height: auto;font-size: 12px; color:#fff }
+
+.btnRedNormal{background-color:#ef3a42; border-radius:5px; padding:20px 40px;  font-family: fru-tiger-roman; font-size:16px; text-transform: capitalize}
+.btnRedNormal:hover{background-color:#636466!important;}
+
+.item-ios ion-avatar img { max-width: 6rem; max-height: 6rem; border-radius: 0;}
+.card-ios { margin: 0px; width: 100%;}
+.ion-page > ion-content { background-color: #e6e7e8;}
+
+.toolbar {background-color:#c61d23; color:#fff;}
+.toolbar-background-ios { background: none;  color:#fff;}
+.toolbar-title-ios {color: #fff; font-family: fru-tiger;letter-spacing: 1px; font-size:18px}
+.toolbar .bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default{color:#fff;}
+
+.toolbar-background-md { background: none;}
+.toolbar-title-md { color:#fff; font-family: fru-tiger-bold; letter-spacing: 1px; font-size:18px; text-align: center;}
+.toolbar .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{color:#fff;}
+.card-md{ margin: 0px; width: 100%; }
+.item-md ion-avatar img { max-width: 6rem; max-height: 6rem; border-radius: 0;}
+
+.toolbar-background-wp { background: none;}
+.toolbar-title-wp { color:#fff;font-family: fru-tiger;letter-spacing: 1px; text-transform: capitalize; font-size:18px}
+.toolbar .bar-button-default-wp, .bar-button-clear-wp-default, .bar-button-wp-default{color:#fff;}
+.card-wp{ margin: 0px; width: 100%; }
+.item-wp ion-avatar img { max-width: 6rem; max-height: 6rem; border-radius: 0;}
+
+.leftBarLogo{ background: url('../assets/img/sideHmLogo.png') no-repeat center 0;  height: 139px;}
+.leftBarLink{background: #9e0425}
+.leftBarLink .item-md{background: #9e0425; color: #fff;  font-family: fru-tiger-light; padding:5px 10px; }
+.leftBarLink .list-md .item-block .item-inner { border-bottom: 1px solid #ca0d35;}
+.leftBarLink .ion-label{ font-family: fru-tiger-light; font-size:18px;}
+
+.copyRightBox{position:absolute; bottom:0; color:#fff; text-align: center; width:100%; border-top: 1px solid #ca0d35;padding-top:25px; padding-bottom:10px; font-size:13px;}
+
+.leftBarLink .list-md{padding: 5px 0px 0px 10px;}
+.home-icon {background: url('../assets/img/leftslide-help.png') no-repeat center left;  border-bottom: 1px solid #ca0d35; width:100%; color:#fff; text-align:left; padding:5px 0px 0px 35px; line-height: 16px;  font-size:16px; font-family: fru-tiger-light; letter-spacing: 1px;}
+.page-two-icon {background: url('../assets/img/leftslide-icon1.png') no-repeat center left; border-bottom: 1px solid #ca0d35; width:100%; color:#fff; text-align:left;padding:5px 0px 0px 35px; line-height: 16px;  font-size:16px; font-family: fru-tiger-light; letter-spacing: 1px;} 
+.page-three-icon {background: url('../assets/img/leftslide-feedback.png') no-repeat center left;  border-bottom: 1px solid #ca0d35; width:100%; color:#fff; text-align:left;padding:5px 0px 0px 35px; line-height: 16px; font-size:16px; font-family: fru-tiger-light; letter-spacing: 1px;}
+.page-logout-icon {background: url('../assets/img/leftslide-logout.png') no-repeat center left;  border-bottom: 1px solid #ca0d35; width:100%; color:#fff; text-align:left;padding:5px 0px 0px 35px; line-height: 16px; font-size:16px; font-family: fru-tiger-light; letter-spacing: 1px;}
+
+
+.tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true] {
+    color: #ca0d35;
+}

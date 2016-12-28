@@ -1,0 +1,24 @@
+directory {
+
+}
+.expolorWrap{margin:auto; display:table; padding-bottom: 20px; min-width:360px;}
+.expolorIcon{background-color: #f6871f; border-radius:6px; width:100px; height:100px; float:left; margin-right:30px; text-align: center}
+.expolorIcon img{width:56px; margin-top:15%; cursor:pointer}
+.expolorIcon p{margin:0px; padding: 0px; color:#fff; font-size:12px;}
+.expolorIcon.last{margin-right:0px}
+
+.expolorIcon.moveAroundBg{background-color: #c82e36;}
+
+.peopleLoadBoxHold {
+    margin: auto;
+    display: table;
+    padding-bottom: 20px;
+    min-width: 360px;
+    position: relative;
+}
+
+.peopleLoadBox{ background: url('../assets/img/peopleLoading.png') no-repeat 0 0; width: 72px; height: 72px;  position: absolute; right: 0px;   top: 15px;   z-index: 999; }
+
+
+
+

@@ -1,0 +1,27 @@
+page-home1 {
+
+}
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #343331;
+}
+
+.loginBg{background: url('../assets/img/login-bg.png') no-repeat 0 0; height:100%;  background-size: cover; /* <------ */ background-repeat: no-repeat;   background-position: center center; 
+}
+.HMLogoBox{width:100%; text-align: center; margin: 120px 0px 0px 0px}
+
+.loginMidBox{width:325px; margin: 35px auto 20px auto; }
+
+.loginBg .LoginInput {width:100%; max-width:100%; padding: 15px 10px; color: #343331; font-size: 15px;  font-family: fru-tiger-roman; border-radius:5px;  border:0px;
+
+}
+.loginBg .item-input{display:block; margin-bottom:25px;}
+.textAlign{text-align:center}
+.btnRed{background-color:#ef3a42; border-radius:20px; padding:25px 80px;  font-family: fru-tiger-roman; font-size:20px;}
+.btnRed:hover{background-color:#636466!important;}
+.btnRed .button-inner{text-transform: capitalize;}
+.loginLink{color:#ef3a42; font-size:20px; text-decoration:underline; margin-top:100px; display: block;  font-family: fru-tiger-roman;}
+.loginLink:hover{text-decoration:none}
+
+  

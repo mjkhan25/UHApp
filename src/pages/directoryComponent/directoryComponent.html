@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Directory</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <h3 class="directHeading h3HeadBot0">Where would you like to go?</h3>
+
+  <div class="divSearchHold">
+    <span class="serchOutBox">
+    <ion-searchbar></ion-searchbar></span></div>
+
+
+<div class="directoryHold">
+<ion-card>
+<ion-item>
+    <ion-label item-left class="textBlock">
+      Department Directory
+    </ion-label>
+     <ion-avatar item-right>
+    <button class="arowBtn"> <img (click)="directoryDetails()" src="assets/img/arrowRight.png"></button>
+    </ion-avatar>
+  </ion-item>
+ </ion-card>
+
+ <ion-card>
+<ion-item>
+    <ion-label item-left class="textBlock">
+      Patient Rooms
+    </ion-label>
+     <ion-avatar item-right>
+    <button class="arowBtn"> <img (click)="directoryDetails()" src="assets/img/arrowRight.png"></button>
+    </ion-avatar>
+  </ion-item>
+ </ion-card>
+
+  <ion-card>
+<ion-item>
+    <ion-label item-left class="textBlock">
+      Physician Directory
+    </ion-label>
+     <ion-avatar item-right>
+    <button class="arowBtn"> <img (click)="directoryDetails()" src="assets/img/arrowRight.png"></button>
+    </ion-avatar>
+  </ion-item>
+ </ion-card>
+
+  <ion-card>
+<ion-item>
+    <ion-label item-left class="textBlock">
+     Services & Procedures
+    </ion-label>
+     <ion-avatar item-right>
+    <button class="arowBtn"> <img (click)="directoryDetails()" src="assets/img/arrowRight.png"></button>
+    </ion-avatar>
+  </ion-item>
+ </ion-card>
+
+  <ion-card>
+<ion-item>
+    <ion-label item-left class="textBlock">
+      Shops & Dining
+    </ion-label>
+     <ion-avatar item-right>
+    <button class="arowBtn"> <img (click)="directoryDetails()" src="assets/img/arrowRight.png"></button>
+    </ion-avatar>
+  </ion-item>
+ </ion-card>
+
+</div>
+  
+</ion-content>
