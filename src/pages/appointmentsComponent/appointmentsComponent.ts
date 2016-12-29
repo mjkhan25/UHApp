@@ -16,7 +16,9 @@ declare var jQuery: any;
 export class appointmentsComponent {
 
   public clickClass:string;
-    appointment:any;
+    allAppointments:any[];
+    todayAppointments:any[];
+    upcomingAppointments:any[];
   constructor(
     public navCtrl: NavController,
     private modalCtrl:ModalController,
@@ -25,7 +27,10 @@ export class appointmentsComponent {
     ) {
     
    this.appointmentService.getAppointmentData().subscribe((res)=>{
-   this.appointment=res;
+     //debugger;
+   this.allAppointments=res;
+   this.todayAppointments=res;
+   this.upcomingAppointments =res;
     console.log(res);
 
    }) 
