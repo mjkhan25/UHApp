@@ -30,10 +30,12 @@ export class appointmentsComponent {
 
    }) 
 
-
-
   }
   
+  collapse(event) {
+    console.log(event.target);
+  }
+
   //modal call method
  clicktoOpenModal(){
   let profileModal = this.modalCtrl.create(modalComponent);
@@ -43,8 +45,6 @@ export class appointmentsComponent {
 
   ngAfterViewInit()
   {
-
-
 
 //Upcoming Card
 
