@@ -34,7 +34,7 @@ export class appointmentsComponent {
   
   collapse(event) {
     var _current = (event.target) ? event.target : event;
-    if(jQuery(event.target).hasClass('upcomingDown')) {
+    if(jQuery(_current).hasClass('upcomingDown')) {
       jQuery(_current).removeClass('upcomingDown');
     } else {
       jQuery('.appointment .upcomingDown').removeClass("upcomingDown");
