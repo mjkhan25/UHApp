@@ -12,7 +12,7 @@
   <div class="">
   <h4 class="appointLable">Today</h4>
 
-<ion-card class="appontCard" *ngFor="let appointment of todayAppointments; let i = index" style="margin-bottom:15px">
+<ion-card class="appontCard" *ngFor="let appointment of todayAppointments; let i = index">
    <ion-item>
      <ion-avatar item-left>
     <img src="{{appointment.imgPath}}">
@@ -35,10 +35,10 @@
        </div>
     </ion-card-content>
   </ion-card>
+
   <h4 class="appointLable hadTopspace">Upcoming</h4>
 
-
-<ion-card class="appontCard" *ngFor="let appointment of upcomingAppointments" style="margin-bottom:15px">
+<ion-card class="appontCard" *ngFor="let appointment of upcomingAppointments">
    <ion-item>
      <ion-avatar item-left>
     <img src="{{appointment.imgPath}}">
