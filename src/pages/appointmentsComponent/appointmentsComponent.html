@@ -12,7 +12,7 @@
   <div class="">
   <h4 class="appointLable">Today</h4>
 
-<!--<ion-card class="appontCard" *ngFor="let appointment of todayAppointments" style="margin-bottom:15px">
+<ion-card class="appontCard" *ngFor="let appointment of todayAppointments; let i = index" style="margin-bottom:15px">
    <ion-item>
      <ion-avatar item-left>
     <img src="{{appointment.imgPath}}">
@@ -23,109 +23,45 @@
     <p> {{appointment.appointmentDateTime}}</p>
       </ion-label>
       <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    <button class="mapRedBtn" (click)="openModal()">Map It</button>
     </ion-label>
   </ion-item>
-  <div class="upcomingClick"></div>
-  <ion-card-content class="wrapBox" style="display:block">
+  <div class="upcomingClick" (click)="collapse($event)" [class.upcomingDown]="i==0"></div>
+  <ion-card-content class="wrapBox" [style.display]="i==0 ? 'block': 'none'">
     <div class="togClass">
     <p> <strong>Department:</strong>  {{appointment.department}} </p>
      <p> <strong>Location:</strong> {{appointment.location}} </p>
        <p> <strong>Phone:</strong> {{appointment.phone}} </p>
        </div>
     </ion-card-content>
-  </ion-card>-->
+  </ion-card>
+  <h4 class="appointLable hadTopspace">Upcoming</h4>
 
-  <ion-card class="appontCard">
-<ion-item>
-    <ion-avatar item-left>
-     <img src="assets/img/thum1.png">
+
+<ion-card class="appontCard" *ngFor="let appointment of upcomingAppointments">
+   <ion-item>
+     <ion-avatar item-left>
+    <img src="{{appointment.imgPath}}">
     </ion-avatar>
-    <ion-label class="cardDescrip">
- <h2>Dr. Nicholas Bambakidis</h2>
-    <p>Neurosurgeon</p>
-     <p>December 10, 2016 - 8:00am</p>
-</ion-label>
+       <ion-label class="cardDescrip">
+      <h2> {{appointment.name}}</h2>
+    <p> {{appointment.title}}</p>
+    <p> {{appointment.appointmentDateTime}}</p>
+      </ion-label>
       <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
+    <button class="mapRedBtn" (click)="openModal()">Map It</button>
     </ion-label>
-   
   </ion-item>
-
-<div class="upcomingClick"></div>
-
-    <ion-card-content class="wrapBox" >
+  <div class="upcomingClick" (click)="collapse($event)" ></div>
+  <ion-card-content class="wrapBox">
     <div class="togClass">
-    <p> <strong>Department:</strong> Neurological Surgery </p>
-     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
-       <p> <strong>Phone:</strong> 216-555-5555 </p>
+    <p> <strong>Department:</strong>  {{appointment.department}} </p>
+     <p> <strong>Location:</strong> {{appointment.location}} </p>
+       <p> <strong>Phone:</strong> {{appointment.phone}} </p>
        </div>
-        
-  </ion-card-content>
-
-</ion-card>
-     
-
- <h4 class="appointLable hadTopspace">Upcoming</h4>
-
-
-<ion-card class="appontCard">
-<ion-item>
-    <ion-avatar item-left>
-     <img src="assets/img/thum2.png">
-    </ion-avatar>
-    <ion-label class="cardDescrip">
- <h2>Dr. Jill Dietz</h2>
-     <p>Surgical Oncology Breast Surgery</p>
-     <p>December 14, 2016 - 9:00am</p>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   
-  </ion-item>
-
-<div class="upcomingClick"></div>
-
-    <ion-card-content class="wrapBox" >
-    <div class="togClass">
-    <p> <strong>Department:</strong> Surgical Oncology Breast Surgery </p>
-     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
-       <p> <strong>Phone:</strong> 216-555-5555 </p>
-       </div>
-  </ion-card-content>
-
+    </ion-card-content>
 </ion-card>
 <p></p>
-<ion-card class="appontCard">
-<ion-item>
-    <ion-avatar item-left>
-     <img src="assets/img/thum3.png">
-    </ion-avatar>
-   <ion-label class="cardDescrip">
-     <h2>Dr. James Rowbottom</h2>
-     <p>Anestesiologist</p>
-     <p>December 16, 2016 - 10:00am</p>
-    </ion-label>
-         <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-  </ion-item>
-
-<div class="upcomingClick"></div>
-<ion-card-content class="wrapBox">
-    <div class="togClass" >
-    <p> <strong>Department:</strong> Anestesiologist </p>
-     <p> <strong>Location:</strong> Bolwell 5th Floor </p>
-       <p> <strong>Phone:</strong> 216-555-5555 </p>
-       </div>
-       
-       
-  </ion-card-content>
-
-  
-</ion-card>
-
 
 </div>
  <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->

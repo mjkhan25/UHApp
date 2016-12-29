@@ -10,13 +10,17 @@
     "location": "Bolwell 5th Floor",
     "phone": " 216-555-5555 "
     
+},
+{
+    "userId": 2,
+    "id": 2,
+    "imgPath":" ../../assets/img/thum1.png",
+    "name": "Dr. Nicholas Bambakidis",
+    "title":"Neurosurgeon",
+    "appointmentDateTime": "December 20, 2018 - 8:00am",
+    "department": "Neurological Surgery 2",
+    "location": "Bolwell 5th Floor 2",
+    "phone": " 216-555-5555 "
+    
 }
-
-
-
-
-
-
-
-
 ]

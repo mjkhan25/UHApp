@@ -25,52 +25,33 @@ export class appointmentsComponent {
     public appointmentService:AppointmentService
 
     ) {
-    
-   this.appointmentService.getAppointmentData().subscribe((res)=>{
-     //debugger;
-   this.allAppointments=res;
-   this.todayAppointments=res;
-   this.upcomingAppointments =res;
-    console.log(res);
-
-   }) 
-
+  var _that = this;  
+  this.appointmentService.getAppointmentData().subscribe((response)=>{   
+    this.todayAppointments = response;
+    this.upcomingAppointments = response;
+   })
   }
   
   collapse(event) {
-    console.log(event.target);
+    var _current = (event.target) ? event.target : event;
+    if(jQuery(event.target).hasClass('upcomingDown')) {
+      jQuery(_current).removeClass('upcomingDown');
+    } else {
+      jQuery('.appointment .upcomingDown').removeClass("upcomingDown");
+      jQuery(".appointment .wrapBox").slideUp();
+      jQuery(_current).addClass('upcomingDown');
+    }
+    jQuery(_current).next('.wrapBox').slideToggle();
   }
 
   //modal call method
- clicktoOpenModal(){
-  let profileModal = this.modalCtrl.create(modalComponent);
-   profileModal.present();
-    }
-  
-
-  ngAfterViewInit()
-  {
-
-//Upcoming Card
-
-jQuery('.appointment .upcomingClick').on('click', function () {
-   jQuery('.appointment .upcomingClick').not(this).removeClass("upcomingDown");
-         
-  if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
-     jQuery(".appointment .upcomingClick").removeClass("upcomingDown");
-  } else {
-    jQuery(this).closest('ion-card').find('.upcomingClick').addClass("upcomingDown");
-     
+  openModal(){
+    let profileModal = this.modalCtrl.create(modalComponent);
+    profileModal.present();
   }
   
-        var $ans = jQuery(this).next(".appointment .wrapBox");
-        $ans.slideToggle();
-        jQuery(".appointment .wrapBox").not($ans).slideUp();
 
-        
-    });
-
-  jQuery(".appointment .upcomingClick:first").trigger('click');
+  ngAfterViewInit() {
   }
 
 
