@@ -15,11 +15,17 @@ export class AppointmentService {
         this.baseUrl = AppConstants.BASE_API_URL;
   }
 
-  getAppointmentData()
+  getTodayAppointmentData()
   {
       //debugger;
       //var url = this.baseUrl + '';
-      var url = '../assets/MockData/appointmentData.json';
+      var url = '../assets/MockData/appointmentTodayData.json';
+      return this.http.get(url).map(res=>res.json());
+  };
+  getUpcomingAppointmentData()
+  {
+      //var url = this.baseUrl + '';
+      var url = '../assets/MockData/appointmentUpcomingData.json';
       return this.http.get(url).map(res=>res.json());
   }
 }

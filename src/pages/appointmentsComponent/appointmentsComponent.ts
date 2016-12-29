@@ -26,8 +26,12 @@ export class appointmentsComponent {
 
     ) {
   var _that = this;  
-  this.appointmentService.getAppointmentData().subscribe((response)=>{   
+  this.appointmentService.getTodayAppointmentData().subscribe((response)=>{   
     this.todayAppointments = response;
+    //this.upcomingAppointments = response;
+   });
+    this.appointmentService.getUpcomingAppointmentData().subscribe((response)=>{   
+    //this.todayAppointments = response;
     this.upcomingAppointments = response;
    })
   }
