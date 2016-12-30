@@ -13,20 +13,26 @@ import {LoginService} from '../../services/loginService';
 })
 
 export class homeComponent {
+  public error: string
 constructor(public navCtrl: NavController, public loginService:LoginService ) { 
   }
 
   data:Login=new Login();
 
 formSubmit(){
-  // this.loginService.ValidateLogin(this.data).subscribe((res)=>{
-  //   console.log(res);
-  //  //debugger;
-  //  }) 
-  if (this.data.Username == "user" && this.data.Password == "user123"){
-  this.navCtrl.push(tabComponent);
-	}
-  else{}
+  this.error = null;
+  if(this.data.Username === '' || this.data.Password === '') {
+    this.error = 'Please Enter username and password!';
+    return ;
+  }
+  
+  this.loginService.ValidateLogin(this.data).subscribe((response)=>{
+    if(response.status === 200) {
+      this.navCtrl.push(tabComponent);
+    } else {
+      this.error = response.message;
+    }
+  })
 }
 
 public clickClass:string;

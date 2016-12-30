@@ -11,18 +11,21 @@
 <div class="HMLogoBox"><img src="assets/img/HMLogo.png"></div>
   <div class="loginMidBox">
    <div class="list">
-        <form (ngSubmit)="formSubmit()">
+        <form (ngSubmit)="formSubmit()" novalidate>
             <label class="item item-input">
               <input type="text" placeholder="Username" class="LoginInput" required  [(ngModel)]="data.Username" name="user">
             </label>
             <label class="item item-input">
               <input type="password" class="LoginInput" placeholder="Password" required  [(ngModel)]="data.Password" name="pass" >
             </label>
+            <div class="alert alert-warning fade in" *ngIf="error">
+                 {{error}}
+            </div>
             <label class="item item-input textAlign">
               <button type="submit" ion-button  class="btnRed">Log In</button>
             </label>
            </form>
-
+              
             <label class="item item-input textAlign">
              <span class="input-label" ><a href="#" (click)="directoryDetails()" class="loginLink">Continue as Guest</a> </span>
              </label>
