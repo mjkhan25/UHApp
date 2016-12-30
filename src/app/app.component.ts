@@ -32,13 +32,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Help', component: helpComponent, sidebarclassname: 'home-icon' },
+     
       { title: 'About', component: aboutComponent, sidebarclassname: 'page-two-icon' },
       //{ title: 'Appointments', component: appointmentsComponent },
       //{ title: 'Directory', component: directoryComponent },
       //{ title: 'Department', component: departmentComponent },
       //{ title: 'MdalComponent', component: modalComponent }
        { title: 'App Feedback', component: feedbackComponent, sidebarclassname: 'page-three-icon' },
+       { title: 'Help', component: helpComponent, sidebarclassname: 'home-icon' },
        { title: 'Log Out', component: homeComponent, sidebarclassname: 'page-logout-icon' },
     ];
 
