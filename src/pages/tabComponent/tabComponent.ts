@@ -6,7 +6,7 @@ import {directoryComponent} from '../directoryComponent/directoryComponent';
 import {departmentComponent} from '../departmentComponent/departmentComponent';
 import {exploreComponent} from '../exploreComponent/exploreComponent';
 import {guideComponent} from '../guideComponent/guideComponent';
-
+import {aboutComponent} from '../aboutComponent/aboutComponent';
 
 @Component({
   selector: 'tabComponent',
@@ -32,7 +32,17 @@ export class tabComponent {
  
     this.tabsIndex =1;
     }
+
+    if(navParams.get('eventObj') === 'aboutComponent') {
+      console.log('ssssssssssssss');
+      //this.tab1Root = exploreComponent;
+    }
   }
+
+  test() {
+    //this.navCtrl.popTo(directoryComponent);
+    //console.log(this.navCtrl.remove(1))
+      }
 }
 
 

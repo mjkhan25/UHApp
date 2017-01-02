@@ -16,7 +16,6 @@ declare var jQuery: any;
 export class appointmentsComponent {
 
   public clickClass:string;
-    allAppointments:any[];
     todayAppointments:any[];
     upcomingAppointments:any[];
   constructor(
@@ -28,12 +27,11 @@ export class appointmentsComponent {
   var _that = this;  
   this.appointmentService.getTodayAppointmentData().subscribe((response)=>{   
     this.todayAppointments = response;
-    //this.upcomingAppointments = response;
-   });
-    this.appointmentService.getUpcomingAppointmentData().subscribe((response)=>{   
-    //this.todayAppointments = response;
+  });
+  
+  this.appointmentService.getUpcomingAppointmentData().subscribe((response)=>{   
     this.upcomingAppointments = response;
-   })
+  });
   }
   
   collapse(event) {
