@@ -2,7 +2,7 @@
 {
     "userId": 1,
     "id": 1,
-    "imgPath":" ../../assets/img/thum1.png",
+    "imgPath":"assets/img/thum1.png",
     "name": "Dr. Nicholas Bambakidis",
     "title":"Neurosurgeon",
     "appointmentDateTime": "December 10, 2016 - 8:00am",

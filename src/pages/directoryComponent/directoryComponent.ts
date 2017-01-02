@@ -10,6 +10,7 @@ import {departmentComponent} from '../departmentComponent/departmentComponent';
   templateUrl: 'directoryComponent.html'
 })
 export class directoryComponent  {
+    
  public clickClass:string;
  //private tab2Root:any;
   constructor(public navCtrl: NavController) {
@@ -18,6 +19,7 @@ export class directoryComponent  {
   }
 
   directoryDetails() {
+   
     this.clickClass =""
        this.navCtrl.push(departmentComponent);
     }

@@ -2,7 +2,7 @@
 {
     "userId": 1,
     "id": 1,
-    "imgPath":" ../../assets/img/thum2.png",
+    "imgPath":"assets/img/thum2.png",
     "name": "Dr. Jill Dietz",
     "title":"Surgical Oncology Breast Surgery",
     "appointmentDateTime": "December 14, 2016 - 9:00am",
@@ -14,7 +14,7 @@
 {
     "userId": 2,
     "id": 2,
-    "imgPath":" ../../assets/img/thum3.png",
+    "imgPath":"assets/img/thum3.png",
     "name": "Dr. James Rowbottom",
     "title":"Anesthesiologist",
     "appointmentDateTime": "December 16, 2016 - 10:00am",
