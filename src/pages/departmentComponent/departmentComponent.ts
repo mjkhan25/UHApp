@@ -20,29 +20,19 @@ export class departmentComponent {
 
  ngAfterViewInit()
   {
-
-//Upcoming Card// Today Card
-jQuery('.department .upcomingClick').on('click', function () {
-  console.log(this);
-   jQuery('.department .upcomingClick').not(this).removeClass("upcomingDown");
-         
-  if (jQuery(this).closest('ion-card').find('.upcomingClick').hasClass("upcomingDown")) {
-     jQuery(".department .upcomingClick").removeClass("upcomingDown");
-  } else {
-    jQuery(this).closest('ion-card').find('.upcomingClick').addClass("upcomingDown");
-     
   }
-  
-        var $ans = jQuery(this).next(".department .wrapBox");
-        $ans.slideToggle();
-        jQuery(".department .wrapBox").not($ans).slideUp();
 
-        
-    });
-
-//jQuery(".appointment .upcomingClick:first").trigger('click');
-
-
+  // code for card toggle
+  collapse(event) {
+    var _current = (event.target) ? event.target : event;
+    if(jQuery(_current).hasClass('upcomingDown')) {
+      jQuery(_current).removeClass('upcomingDown');
+    } else {
+      jQuery('.department .upcomingDown').removeClass('upcomingDown');
+      jQuery('.department .wrapBox').slideUp();
+      jQuery(_current).addClass('upcomingDown');
+    }
+    jQuery(_current).next('.wrapBox').slideToggle();
   }
 
 
