@@ -9,13 +9,13 @@ import {guideComponent} from '../guideComponent/guideComponent';
 import {aboutComponent} from '../aboutComponent/aboutComponent';
 import {feedbackComponent} from '../feedbackComponent/feedbackComponent';
 import {helpComponent} from '../helpComponent/helpComponent';
+declare var jQuery: any;
 
 @Component({
   selector: 'tabComponent',
   templateUrl: 'tabComponent.html'
 })
 
-@Injectable()
 export class tabComponent {
   private tab1Root:any;
   private tab2Root:any;
@@ -48,10 +48,11 @@ export class tabComponent {
     }
   }
 
-  test() {
-    //this.navCtrl.popTo(directoryComponent);
-    //console.log(this.navCtrl.remove(1))
-      } 
+  closePage() {
+    if(jQuery('.bar-button-default-md.show-back-button').length > 0) {
+      jQuery('.bar-button-default-md.show-back-button').trigger('click');
+    }
+  } 
 }
 
 

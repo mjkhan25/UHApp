@@ -59,7 +59,7 @@ export class MyApp {
     
     let tabPages = {'About': 4, 'App Feedback': 5, 'Help': 6};
     if(tabPages[page.title]) {
-      this.nav._children[0].select(tabPages[page.title]);
+      this.app.getRootNav().getActiveChildNav().select(tabPages[page.title]);
     } else {
       this.nav.setRoot(page.component);
     }
