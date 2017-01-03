@@ -22,19 +22,23 @@ export class homeComponent {
   data:Login=new Login();
 
   formSubmit(){
-    this.error = null;
-    if(this.data.Username === '' || this.data.Password === '') {
-      this.error = 'Please Enter username and password!';
-      return ;
-    }
+    // this.error = null;
+    // if(this.data.Username === '' || this.data.Password === '') {
+    //   this.error = 'Please Enter username and password!';
+    //   return ;
+    // }
     
-    this.loginService.ValidateLogin(this.data).subscribe((response)=>{
-      if(response.status === 200) {
-        this.navCtrl.push(tabComponent);
-      } else {
-        this.error = response.message;
-      }
-    })
+    // this.loginService.ValidateLogin(this.data).subscribe((response)=>{
+    //   if(response.status === 200) {
+    //     this.navCtrl.push(tabComponent);
+    //   } else {
+    //     this.error = response.message;
+    //   }
+    // })
+     if (this.data.Username == "user" && this.data.Password == "user123"){
+  this.navCtrl.push(tabComponent);
+	}
+  else{}
   }
 
 public clickClass:string;
