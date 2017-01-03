@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
 import { NavController, NavParams, Tabs } from 'ionic-angular';
 import {appointmentsComponent} from '../appointmentsComponent/appointmentsComponent';
@@ -7,42 +7,51 @@ import {departmentComponent} from '../departmentComponent/departmentComponent';
 import {exploreComponent} from '../exploreComponent/exploreComponent';
 import {guideComponent} from '../guideComponent/guideComponent';
 import {aboutComponent} from '../aboutComponent/aboutComponent';
+import {feedbackComponent} from '../feedbackComponent/feedbackComponent';
+import {helpComponent} from '../helpComponent/helpComponent';
 
 @Component({
   selector: 'tabComponent',
   templateUrl: 'tabComponent.html'
 })
+
+@Injectable()
 export class tabComponent {
   private tab1Root:any;
   private tab2Root:any;
   private tab3Root:any;
   private tab4Root:any;
+  private tab5Root:any;
+  private tab6Root:any;
+  private tab7Root:any;
   private directoryTab:any;
   private tabsIndex:number;
+  private current:any;
 
   constructor(public navCtrl: NavController, private navParams:NavParams) {
-  
+
+  //Show tab  
   this.tab1Root = appointmentsComponent;
   this.tab2Root = directoryComponent;
   this.tab3Root = guideComponent;
   this.tab4Root = exploreComponent;
+  
+  //Hide Tab
+  this.tab5Root = aboutComponent;
+  this.tab6Root = feedbackComponent;
+  this.tab7Root = helpComponent;
+    
     this.directoryTab = navParams.get('eventObj');
-     if( this.directoryTab =='directory')
+    if( this.directoryTab =='directory')
     {
- 
     this.tabsIndex =1;
-    }
-
-    if(navParams.get('eventObj') === 'aboutComponent') {
-      console.log('ssssssssssssss');
-      //this.tab1Root = exploreComponent;
     }
   }
 
   test() {
     //this.navCtrl.popTo(directoryComponent);
     //console.log(this.navCtrl.remove(1))
-      }
+      } 
 }
 
 

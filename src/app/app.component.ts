@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { homeComponent } from '../pages/homeComponent/homeComponent';
@@ -16,7 +16,6 @@ import { aboutComponent } from '../pages/aboutComponent/aboutComponent';
 import { cardComponent } from '../pages/cardComponent/cardComponent';
 import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent';
 
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -27,7 +26,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, sidebarclassname:string}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, private app: App) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -57,6 +56,12 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    
+    let tabPages = {'About': 4, 'App Feedback': 5, 'Help': 6};
+    if(tabPages[page.title]) {
+      this.nav._children[0].select(tabPages[page.title]);
+    } else {
+      this.nav.setRoot(page.component);
+    }
   }
 }

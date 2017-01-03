@@ -1,8 +1,12 @@
-
-
 <ion-tabs [selectedIndex]="tabsIndex">
+  <!-- <ion-tab [root]="tab1Root" tabTitle=""></ion-tab> -->
   <ion-tab [root]="tab1Root"  tabTitle="Appointments" tabIcon="calendar"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Find" tabIcon="pin" (ionSelect)="test()"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Prepare" tabIcon="list-box"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Explore" tabIcon="paper-plane"></ion-tab>
+
+  <ion-tab [root]="tab5Root" show=false></ion-tab>
+  <ion-tab [root]="tab6Root" show=false></ion-tab>
+  <ion-tab [root]="tab7Root" show=false></ion-tab>
+
 </ion-tabs>
