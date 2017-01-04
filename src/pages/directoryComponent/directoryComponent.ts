@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import {departmentComponent} from '../departmentComponent/departmentComponent';
@@ -11,25 +11,36 @@ import {DirectoryFindService} from '../../services/directoryFindService';
   providers:[DirectoryFindService]
 })
 export class directoryComponent  {
-    
+ @Input() directorySearch = '';
  public clickClass:string;
- directoryFindData:any[];
-
+ private directoryData:any[];
+ directorySearchData:any[]
   constructor(
     public navCtrl: NavController,
     public directoryFindService:DirectoryFindService
     ) {
    
-  var _that = this;  
-  this.directoryFindService.getDirectoryFindData().subscribe((response)=>{   
-    this.directoryFindData = response;
-  });
-    
-  }
+	var _that = this;  
+		this.directoryFindService.getDirectoryFindData().subscribe((response)=>{   
+		this.directoryData = response;
+		this.directorySearchData = response;
+	});
 
-  directoryDetails() {
-    this.clickClass =""
-       this.navCtrl.push(departmentComponent);
-    }
+	}	
+
+	onSearch() {
+		this.directorySearchData = [];
+		let input = this.directorySearch.toLowerCase();
+		for(let i in this.directoryData) {
+			if(this.directoryData[i].directoryName.toLowerCase().indexOf(input) !== -1) {
+				this.directorySearchData.push(this.directoryData[i]);
+			}
+		}
+	}
+
+	directoryDetails() {
+	   this.clickClass =""
+	   this.navCtrl.push(departmentComponent);
+	}
 
 }

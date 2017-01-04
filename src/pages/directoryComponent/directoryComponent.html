@@ -10,7 +10,10 @@
 <h3 class="directHeading h3HeadBot0">Where would you like to go?</h3>
   <div class="divSearchHold">
     <span class="serchOutBox">
-    <ion-searchbar></ion-searchbar></span></div>
+    <ion-searchbar debounce="0" 
+                  [(ngModel)]="directorySearch" 
+                   (ionInput)="onSearch($event)">
+    </ion-searchbar></span></div>
 
 <ion-content padding class="scrolltopSpace">
   
@@ -20,7 +23,7 @@
 
 <div class="directoryHold">
 
-<ion-card *ngFor="let directoryFind of directoryFindData">
+<ion-card *ngFor="let directoryFind of directorySearchData">
 <ion-item (click)="directoryDetails()" >
     <ion-label item-left class="textBlock" >
       {{directoryFind.directoryName}}
