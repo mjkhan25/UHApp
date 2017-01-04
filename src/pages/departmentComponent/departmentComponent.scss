@@ -5,7 +5,7 @@ directory {
 .arowBtn{background:none;}
 .textBlock{font-size:17px; color:#444444; font-family: fru-tiger-bold;}
 .directoryHold .card {position:inherit; padding-bottom: 0px; margin-bottom:10px; }
-.directHeading{color:#636466; font-size:18px; font-family: fru-tiger-light; padding-top: 10px; padding-bottom: 10px}
+.directHeading{color:#636466; font-size:18px; font-family: fru-tiger-light;}
 
 .divSearchHold { height:70px;  margin-bottom:15px;}
 .serchOutBox{    
@@ -17,8 +17,11 @@ directory {
     padding: 5px;
     font-family: fru-tiger-light;
     }
-   .divSearchHold .searchbar-input {padding: 6px 35px;}
-    .h3HeadBot0{margin-bottom:0px;}
+  .divSearchHold .searchbar-input {padding: 6px 35px;}
+    .h3HeadSearch{margin-top: 60px; background: #e6e7e8; padding:10px 0px 10px 15px; margin-bottom:0px; }
+
+    .scrolltopSpace{margin-top:140px;}
+    .scrolltopSpace .scroll-content {margin-top:30px!important; padding-bottom:140px!important;}
 
     .departmentList .upcomingClick{left:10px; padding-bottom: 5px;}
     .departmentList .upcomingDown {left:45%;}
