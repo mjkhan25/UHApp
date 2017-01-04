@@ -1,0 +1,58 @@
+[
+{
+    "userId": 1,
+    "id": 1,
+    "directoryName": "Department Directory"
+  },
+  {
+    "userId": 2,
+    "id": 2,
+    "directoryName": "Patient Rooms"
+  },
+  {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+    {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+    {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+    {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+     {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+     {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+     {
+    "userId": 3,
+    "id": 3,
+    "directoryName": " Physician Directory"
+  },
+  {
+    "userId": 4,
+    "id": 4,
+    "directoryName": " Services & Procedures"
+  },
+  {
+    "userId": 5,
+    "id": 5,
+    "directoryName": "Shops & Dining"
+  }
+
+]

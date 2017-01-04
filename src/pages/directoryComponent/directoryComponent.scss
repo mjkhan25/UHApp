@@ -10,12 +10,18 @@ directory {
 .divSearchHold { height:70px;  margin-bottom:15px;}
 .serchOutBox{    
     position: absolute;
-  background-color:#bcbec0;
+    background-color:#bcbec0;
     width: 100%;
     z-index: 99;
     left: 0px;
     padding: 5px;
+    font-family: fru-tiger-light;
     }
    .divSearchHold .searchbar-input {padding: 6px 35px;}
-    .h3HeadBot0{margin-bottom:0px;}
+    .h3HeadBot0{margin-top: 60px; background: #e6e7e8; padding-top: 10px;}
+
+    .scrolltopSpace{margin-top:100px;}
+    .scrolltopSpace .scroll-content {margin-top:30px!important; padding-bottom:100px!important;}
+
+
 
