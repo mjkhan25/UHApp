@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 import {AppConstants} from '../constants/app.constants';
 import 'rxjs/add/operator/map';
-//import{Appointment} from '../modal/appointmentModal';
+//import{Appointment} from '../modal/departmentModal';
 
 
 @Injectable()
