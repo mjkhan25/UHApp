@@ -1,18 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NavController, ModalController } from 'ionic-angular';
 import {modalComponent} from '../modalComponent/modalComponent';
+import {DepartmentService} from '../../services/departmentService';
 declare var jQuery: any;
 
 @Component({
   selector: 'departmentComponent',
-  templateUrl: 'departmentComponent.html'
+  templateUrl: 'departmentComponent.html',
+  providers:[DepartmentService]
 })
 export class departmentComponent {
+  @Input() departmentSearch = '';
+    private departmentData:any[];
+    departmentSearchData:any[]
+  constructor(
+    public navCtrl: NavController,  
+    private modalCtrl:ModalController,
+    public departmentService:DepartmentService
+    
+    ) {
 
-  constructor(public navCtrl: NavController,  private modalCtrl:ModalController) {
+   var _that = this;  
+		this.departmentService.getDepartmentData().subscribe((response)=>{   
+		this.departmentData = response;
+    this.departmentSearchData = response;
+		
+	});
     
   }
+
+	onSearch() {
+		this.departmentSearchData = [];
+		let input = this.departmentSearch.toLowerCase();
+		for(let i in this.departmentData) {
+			if(this.departmentData[i].departmentName.toLowerCase().indexOf(input) !== -1) {
+				this.departmentSearchData.push(this.departmentData[i]);
+			}
+		}
+	}
+
+
    clicktoOpenModal(){
   let profileModal = this.modalCtrl.create(modalComponent);
    profileModal.present();

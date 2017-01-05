@@ -11,147 +11,33 @@
 
   <div class="divSearchHold">
     <span class="serchOutBox">
-    <ion-searchbar></ion-searchbar></span></div>
+    <ion-searchbar debounce="0" 
+                  [(ngModel)]="departmentSearch" 
+                   (ionInput)="onSearch($event)">
+    </ion-searchbar>
+    </span></div>
 <ion-content padding class="department scrolltopSpace">
  
 <div class="departmentList">
 
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Audiology</h3>
-</ion-label>
+<ion-card *ngFor="let department of departmentSearchData">
+ <ion-item>
+  <ion-label>
+     <h3 class="departHead"> {{department.title}}</h3>
+  </ion-label>
       <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
     </ion-label>
-   </ion-item>
-
+ </ion-item>
 <div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
+ <ion-card-content class="wrapBox">
     <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
+    <p> <strong>Location:</strong> {{department.location}} </p>
+     <p> <strong>Hours:</strong> {{department.hours}} </p>
+      <p> <strong>Details:</strong> {{department.details}} </p>
+       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed">{{department.phone}}</span></div>
        </div>
-      
   </ion-card-content>
-
-</ion-card>
-
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Cardiology</h3>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   </ion-item>
-
-<div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
-    <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
-       </div>
-      
-  </ion-card-content>
-
-</ion-card>
-
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Chemotherapy</h3>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   </ion-item>
-
-<div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
-    <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
-       </div>
-      
-  </ion-card-content>
-
-</ion-card>
-
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Emergency Department</h3>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   </ion-item>
-
-<div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
-    <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
-       </div>
-      
-  </ion-card-content>
-
-</ion-card>
-
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Eye Clinic</h3>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   </ion-item>
-
-<div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
-    <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
-       </div>
-      
-  </ion-card-content>
-
-</ion-card>
-
-<ion-card>
-<ion-item>
-      <ion-label>
-     <h3 class="departHead">Intensive Care Unit </h3>
-</ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>
-    </ion-label>
-   </ion-item>
-
-<div class="upcomingClick" (click)="collapse($event)"></div>
-    <ion-card-content class="wrapBox">
-    <div class="togClass">
-    <p> <strong>Location:</strong> Bolwell 3rd Floor </p>
-     <p> <strong>Hours:</strong> Monday - Friday, 7.00am - 5.00pm </p>
-      <p> <strong>Details:</strong> Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations. </p>
-       <div class="phonRed"><ion-icon name="call" class="phonRed"></ion-icon> &nbsp;<span class="phonRed"> 216-445-8903</span></div>
-       </div>
-      
-  </ion-card-content>
-
 </ion-card>
 
 </div>

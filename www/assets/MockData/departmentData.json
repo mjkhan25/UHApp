@@ -1,0 +1,58 @@
+[
+{
+    "userId": 1,
+    "id": 1,
+    "title": "Audiology",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+},
+{
+    "userId": 2,
+    "id": 2,
+    "title": "Cardiology",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+},
+{
+    "userId": 3,
+    "id": 3,
+    "title": "Chemotherapy",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+},
+{
+    "userId": 4,
+    "id": 4,
+    "title": "Emergency Department",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+},
+{
+    "userId": 5,
+    "id": 5,
+    "title": "Eye Clinic",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+},
+{
+    "userId": 6,
+    "id": 6,
+    "title": "Intensive Care Unit",
+    "location":"Bolwell 3rd Floor",
+    "hours": "Monday - Friday, 7.00am - 5.00pm",
+    "details": "Offers hearing evaluations for adults and children, hearing aid dispensing and management, and cochlear implant evaluations.",
+    "phone": "216-445-8903"  
+}
+
+
+]
