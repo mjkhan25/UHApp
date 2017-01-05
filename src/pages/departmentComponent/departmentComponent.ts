@@ -34,7 +34,7 @@ export class departmentComponent {
 		this.departmentSearchData = [];
 		let input = this.departmentSearch.toLowerCase();
 		for(let i in this.departmentData) {
-			if(this.departmentData[i].departmentName.toLowerCase().indexOf(input) !== -1) {
+			if(this.departmentData[i].title.toLowerCase().indexOf(input) !== -1) {
 				this.departmentSearchData.push(this.departmentData[i]);
 			}
 		}
@@ -42,8 +42,8 @@ export class departmentComponent {
 
 
    clicktoOpenModal(){
-  let profileModal = this.modalCtrl.create(modalComponent);
-   profileModal.present();
+    let profileModal = this.modalCtrl.create(modalComponent);
+      profileModal.present();
     }
 
  ngAfterViewInit()
