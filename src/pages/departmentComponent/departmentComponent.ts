@@ -42,8 +42,8 @@ export class departmentComponent {
 
 
    clicktoOpenModal(){
-  let profileModal = this.modalCtrl.create(modalComponent);
-   profileModal.present();
+    let profileModal = this.modalCtrl.create(modalComponent);
+      profileModal.present();
     }
 
  ngAfterViewInit()
