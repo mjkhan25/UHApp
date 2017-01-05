@@ -18,8 +18,8 @@ export class DirectoryFindService {
   getDirectoryFindData()
   {
       //debugger;
-      //var url = this.baseUrl + '';
-      var url = 'assets/MockData/directoryFindData.json';
+      var url = 'https://ljturn.azurewebsites.net/api/wfMenu/GetMenuItemsIOS/612';
+      //var url = 'assets/MockData/directoryFindData.json';
       return this.http.get(url).map(res=>res.json());
   };
 

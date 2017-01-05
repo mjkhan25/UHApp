@@ -23,8 +23,8 @@ export class departmentComponent {
 
    var _that = this;  
 		this.departmentService.getDepartmentData().subscribe((response)=>{   
-		this.departmentData = response;
-    this.departmentSearchData = response;
+		this.departmentData = response.DestinationList;
+    this.departmentSearchData = response.DestinationList;
 		
 	});
     
@@ -34,7 +34,7 @@ export class departmentComponent {
 		this.departmentSearchData = [];
 		let input = this.departmentSearch.toLowerCase();
 		for(let i in this.departmentData) {
-			if(this.departmentData[i].title.toLowerCase().indexOf(input) !== -1) {
+			if(this.departmentData[i].destinationname.toLowerCase().indexOf(input) !== -1) {
 				this.departmentSearchData.push(this.departmentData[i]);
 			}
 		}

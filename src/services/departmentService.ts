@@ -1,7 +1,6 @@
 import {Http} from '@angular/http';
 import { Injectable } from '@angular/core';
 
-
 import {AppConstants} from '../constants/app.constants';
 import 'rxjs/add/operator/map';
 //import{Appointment} from '../modal/departmentModal';
@@ -18,8 +17,8 @@ export class DepartmentService {
   getDepartmentData()
   {
       //debugger;
-      //var url = this.baseUrl + '';
-      var url = 'assets/MockData/departmentData.json';
+      var url = 'https://ljturn.azurewebsites.net/api/wfDestination/GetDestinationDataIOSv2/612';
+      //var url = 'assets/MockData/departmentData.json';
       return this.http.get(url).map(res=>res.json());
   };
 

@@ -22,8 +22,8 @@ export class directoryComponent  {
    
 	var _that = this;  
 		this.directoryFindService.getDirectoryFindData().subscribe((response)=>{   
-		this.directoryData = response;
-		this.directorySearchData = response;
+		this.directoryData = response.MenuList;
+		this.directorySearchData = response.MenuList;
 	});
 
 	}	
@@ -32,7 +32,7 @@ export class directoryComponent  {
 		this.directorySearchData = [];
 		let input = this.directorySearch.toLowerCase();
 		for(let i in this.directoryData) {
-			if(this.directoryData[i].directoryName.toLowerCase().indexOf(input) !== -1) {
+			if(this.directoryData[i].menuLabel.toLowerCase().indexOf(input) !== -1) {
 				this.directorySearchData.push(this.directoryData[i]);
 			}
 		}
