@@ -14,11 +14,9 @@ export class DepartmentService {
         this.baseUrl = AppConstants.BASE_API_URL;
   }
 
-  getDepartmentData()
+  getDepartmentData(id)
   {
-      //debugger;
-      var url = 'https://ljturn.azurewebsites.net/api/wfDestination/GetDestinationDataIOSv2/612';
-      //var url = 'assets/MockData/departmentData.json';
+      var url = this.baseUrl + 'wfDestination/GetDestinationDataIOSv2/' + id;
       return this.http.get(url).map(res=>res.json());
   };
 

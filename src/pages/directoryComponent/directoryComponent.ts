@@ -38,9 +38,9 @@ export class directoryComponent  {
 		}
 	}
 
-	directoryDetails() {
+	directoryDetails(id) {
 	   this.clickClass =""
-	   this.navCtrl.push(departmentComponent);
+	   this.navCtrl.push(departmentComponent, {id: id});
 	}
 
 }

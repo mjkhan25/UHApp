@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, NavParams } from 'ionic-angular';
 import {modalComponent} from '../modalComponent/modalComponent';
 import {DepartmentService} from '../../services/departmentService';
 declare var jQuery: any;
@@ -13,16 +13,15 @@ declare var jQuery: any;
 export class departmentComponent {
   @Input() departmentSearch = '';
     private departmentData:any[];
-    departmentSearchData:any[]
+    departmentSearchData:any[];
   constructor(
     public navCtrl: NavController,  
     private modalCtrl:ModalController,
-    public departmentService:DepartmentService
-    
+    public departmentService:DepartmentService,
+    public params: NavParams
     ) {
-
-   var _that = this;  
-		this.departmentService.getDepartmentData().subscribe((response)=>{   
+    var _that = this;  
+		this.departmentService.getDepartmentData(params.get('id')).subscribe((response)=>{   
 		this.departmentData = response.DestinationList;
     this.departmentSearchData = response.DestinationList;
 		

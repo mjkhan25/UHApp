@@ -19,7 +19,7 @@
 <div class="directoryHold">
 
 <ion-card *ngFor="let directoryFind of directorySearchData">
-<ion-item (click)="directoryDetails()" >
+<ion-item (click)="directoryDetails(directoryFind.onclick)" >
     <ion-label item-left class="textBlock">
       {{directoryFind.menuLabel}}
     </ion-label>
