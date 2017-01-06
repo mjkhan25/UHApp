@@ -22,8 +22,8 @@
 
 <ion-card *ngFor="let department of departmentSearchData">
  <ion-item>
-  <ion-label>
-     <h3 class="departHead"> {{department.destinationname}}</h3>
+  <ion-label class="textBlock">
+     {{department.destinationname}}
   </ion-label>
       <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="clicktoOpenModal()">Map It</button>

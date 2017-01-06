@@ -3,7 +3,7 @@ directory {
 }
 
 .arowBtn{background:none;}
-.textBlock{font-size:17px; color:#444444; font-family: fru-tiger-bold; overflow: visible; font-size:17px;}
+.textBlock{font-size:17px; color:#444444; font-family: fru-tiger-bold; overflow: visible; line-height:18px; margin:5px 0px;}
 .directoryHold .card {position:inherit; padding-bottom: 0px; margin-bottom:10px; }
 .directHeading{color:#636466; font-size:18px; font-family: fru-tiger-light; }
 
@@ -14,15 +14,13 @@ directory {
     width: 100%;
     z-index: 99;
     left: 0px;
-    padding: 5px;
+    padding: 5px 8px;
     font-family: fru-tiger-light;
     }
-   .divSearchHold .searchbar-input {padding: 6px 35px 6px 25px;}
-    .h3HeadSearch{margin-top: 60px; background: #e6e7e8; padding:10px 0px 10px 15px; margin-bottom:0px;}
-
-    .scrolltopSpace{margin-top:140px;}
-    .scrolltopSpace .scroll-content {margin-top:30px!important; padding-bottom:140px!important;}
-
-.serchOutBox .searchbar-md .searchbar-search-icon{left:5px}
+.divSearchHold .searchbar-input {padding: 6px 35px 6px 30px;}
+.h3HeadSearch{margin-top: 60px; background: #e6e7e8; padding:10px 0px 10px 15px; margin-bottom:0px;}
+ .scrolltopSpace{margin-top:140px;}
+ .scrolltopSpace .scroll-content {margin-top:30px!important; padding-bottom:140px!important;}
+.serchOutBox .searchbar-md .searchbar-search-icon{left:10px}
 
 
