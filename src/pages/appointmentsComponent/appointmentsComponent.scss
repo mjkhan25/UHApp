@@ -22,7 +22,7 @@ appointments {
 .btnClickDown:before {  content: "Details"; color:#ef3a42; font-size:12px;}
 
 
-.upcomingClick{position:absolute; bottom:0;background: url('../assets/img/detArrow.png') no-repeat 40px 2px; left:86px;cursor:pointer;padding-right: 25px; padding-bottom: 5px;}
+.upcomingClick{position:absolute; bottom:0;background: url('../assets/img/detArrow.png') no-repeat 40px 2px; left:92px;cursor:pointer;padding-right: 25px; padding-bottom: 5px;}
 .upcomingClick:before {  content: "Details"; color:#ef3a42; font-size:12px;}
 .upcomingDown{position:absolute; bottom:0; left:45%; background: url('../assets/img/toglArrow.png') no-repeat 0 0; width: 50px; height: 26px;cursor:pointer; }
 .upcomingDown:before{ content: "";}
