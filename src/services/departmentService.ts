@@ -14,9 +14,8 @@ export class DepartmentService {
         this.baseUrl = AppConstants.BASE_API_URL;
   }
 
-  getDepartmentData(id)
-  {
-      var url = this.baseUrl + 'wfDestination/GetDestinationDataIOSv2/' + id;
+  getDepartmentData(){
+      var url = this.baseUrl + 'wfDestination/GetDestinationDataIOSv2/612';
       return this.http.get(url).map(res=>res.json());
   };
 

@@ -21,9 +21,17 @@ export class departmentComponent {
     public params: NavParams
     ) {
     var _that = this;  
-		this.departmentService.getDepartmentData(params.get('id')).subscribe((response)=>{   
-		this.departmentData = response.DestinationList;
-    this.departmentSearchData = response.DestinationList;
+		this.departmentService.getDepartmentData().subscribe((response)=>{   
+		let id = params.get('id');
+    let departments = [];
+    for(let i in response.DestinationList) {
+      if(response.DestinationList[i].destinationtypeid === id) {
+        departments.push(response.DestinationList[i]);
+      }
+    }
+    console.log(response);
+    this.departmentData = departments;
+    this.departmentSearchData = departments;
 		
 	});
     
