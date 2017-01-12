@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import {departmentComponent} from '../departmentComponent/departmentComponent';
 import {DirectoryFindService} from '../../services/directoryFindService';
 
@@ -17,13 +17,22 @@ export class directoryComponent  {
  directorySearchData:any[]
   constructor(
     public navCtrl: NavController,
-    public directoryFindService:DirectoryFindService
+    public directoryFindService:DirectoryFindService,
+	private loadingCtrl: LoadingController
     ) {
+	// Add text loading popup
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading ...'
+    });
+    // Show the loading  popup
+    loadingPopup.present();
    
 	var _that = this;  
 		this.directoryFindService.getDirectoryFindData().subscribe((response)=>{   
 		this.directoryData = response.MenuList;
 		this.directorySearchData = response.MenuList;
+        loadingPopup.dismiss();
+
 	});
 
 	}	

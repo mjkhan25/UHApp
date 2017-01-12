@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { NavController, ModalController, NavParams } from 'ionic-angular';
+import { NavController, ModalController, NavParams, LoadingController } from 'ionic-angular';
 import {modalComponent} from '../modalComponent/modalComponent';
 import {DepartmentService} from '../../services/departmentService';
 declare var jQuery: any;
@@ -18,8 +18,17 @@ export class departmentComponent {
     public navCtrl: NavController,  
     private modalCtrl:ModalController,
     public departmentService:DepartmentService,
-    public params: NavParams
+    public params: NavParams,
+    private loadingCtrl: LoadingController
     ) {
+    
+    // Add text loading popup
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading ...'
+    });
+    // Show the loading  popup
+    loadingPopup.present();
+
     var _that = this;  
 		this.departmentService.getDepartmentData().subscribe((response)=>{   
 		let id = params.get('id');
@@ -32,6 +41,7 @@ export class departmentComponent {
     console.log(response);
     this.departmentData = departments;
     this.departmentSearchData = departments;
+    loadingPopup.dismiss();
 		
 	});
     

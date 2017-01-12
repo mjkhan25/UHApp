@@ -13,7 +13,7 @@ import { exploreComponent } from '../pages/exploreComponent/exploreComponent';
 import { guideComponent } from '../pages/guideComponent/guideComponent';
 import { helpComponent } from '../pages/helpComponent/helpComponent';
 import { aboutComponent } from '../pages/aboutComponent/aboutComponent';
-import { cardComponent } from '../pages/cardComponent/cardComponent';
+//import { cardComponent } from '../pages/cardComponent/cardComponent';
 import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent';
 
 @Component({
