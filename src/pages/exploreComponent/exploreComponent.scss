@@ -1,7 +1,7 @@
 directory {
 
 }
-.expolorWrap{margin:auto; display:table; padding-bottom: 15px; min-width:360px;}
+.expolorWrap{margin:auto; display:table; padding-bottom: 15px; /*min-width:360px;*/}
 .expolorIcon{background-color: #f6871f; border-radius:6px; width:90px; height:90px; float:left; margin-right:25px; text-align: center}
 .expolorIcon img{width:56px; margin-top:10%; cursor:pointer}
 .expolorIcon p{margin:0px; padding: 0px; color:#fff; font-size:12px;}
@@ -19,4 +19,15 @@ directory {
 
 .peopleLoadBox{ background: url('../assets/img/peopleLoading.png') no-repeat 0 0; width: 72px; height: 72px;  position: absolute; right: 0px;   top: 15px;   z-index: 999; }
 .expolorWrap .top10{padding-top:10px;}
+
+/* Portrait */
+@media only screen 
+  and (max-device-width: 320px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .expolorWrap{min-width:320px;}  
+    .expolorIcon{ width:80px; height:80px;}
+    .expolorIcon img{ width:46px; height:46px;}
+    .paddingTop15 { padding-top: 0px;}
+}
 
