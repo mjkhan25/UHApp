@@ -3,19 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Prepare</ion-title>
+    <ion-title>Appointment Prep</ion-title>
   </ion-navbar>
 </ion-header>
-<div class="peopleLoadBoxHold"> 
-<div class="peopleLoadBox"></div></div>
+
 <ion-content padding class="">
     
-<div class="expolorWrap paddingTop15 guidBox">
-    <h4 class="redLableHad">We want to change that</h4>
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+<div class="expolorWrap guidBox">
+  <p class="margTop0"><img src="assets/img/prep50.png"></p>
+  <p class="font20">of patients leave the office not understanding what the doctor told them.</p>
+    <h4 class="redHeading">We want to change that!</h4>
+     <p class="font15">So we have created a list of questions you may want to ask your doctor. You can star the question you would like to ask you.
 </p>
-<p> &nbsp;</p>
-    <p> <button ion-button class="btnRedNormal">Next</button></p>
+
+    <p> <button ion-button class="btnRedNormal" (click)="getAppointmentPrep()">Begin</button></p>
      </div>
 
 

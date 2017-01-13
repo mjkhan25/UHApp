@@ -32,8 +32,8 @@ export class tabComponent {
 
   //Show tab  
   this.tab1Root = appointmentsComponent;
-  this.tab2Root = directoryComponent;
-  this.tab3Root = guideComponent;
+  this.tab2Root = guideComponent;
+  this.tab3Root = directoryComponent;
   this.tab4Root = exploreComponent;
   
   //Hide Tab
@@ -44,7 +44,7 @@ export class tabComponent {
     this.directoryTab = navParams.get('eventObj');
     if( this.directoryTab =='directory')
     {
-    this.tabsIndex =1;
+    this.tabsIndex =2;
     }
   }
 

@@ -1,0 +1,40 @@
+directory {
+
+}
+
+.toggleWraper{width:180px; margin-bottom: 15px;}
+
+.appointPrepWraper ion-segment {border: 1px solid #ef3a42; border-radius: 4px;background: #fff;}
+.appointPrepWraper .segment-md .segment-button {
+    height: 25px;
+    line-height: 25px;
+    text-transform:capitalize;
+    color: #ef3a42;
+    opacity: inherit;
+    font-family: fru-tiger-light;    
+}
+.appointPrepWraper .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: transparent;
+    opacity: 1;
+    background: #ef3a42;
+    color: #fff;
+}
+.appointPrepWraper .segment-ios .segment-button.segment-activated { background-color: #ef3a42; color: #fff;}
+.appointPrepWraper .segment-ios .segment-button {
+    height: 25px;
+    line-height: 25px;
+    border-width: 0px;
+    color: #ef3a42;
+    opacity: inherit;
+    font-family: fru-tiger-light;    
+}
+.appointPrepWraper .item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner{background-image:none;}
+
+
+
+.appointPrepWraper .item-md { padding-left: 6px; font-size: 12px;}
+.appointPrepWraper .item-block{min-height:30px;}
+.appointPrepWraper .item-md ion-icon[item-left], .item-md ion-icon[item-right] { margin-top: 3px; margin-bottom: 3px;}
+.appointPrepWraper .label-md { margin: 3px 8px 3px 0; font-family: fru-tiger-roman; color:#444}
+.appointPrepWraper .item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input { margin-left: 0px;}
+.appointPrepWraper ion-label{white-space: normal; overflow: visible;}

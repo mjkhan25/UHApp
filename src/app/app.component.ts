@@ -15,6 +15,7 @@ import { helpComponent } from '../pages/helpComponent/helpComponent';
 import { aboutComponent } from '../pages/aboutComponent/aboutComponent';
 //import { cardComponent } from '../pages/cardComponent/cardComponent';
 import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent';
+import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appointmentPrepComponent';
 
 @Component({
   templateUrl: 'app.html'

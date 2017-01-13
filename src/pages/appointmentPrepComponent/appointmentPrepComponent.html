@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Appointment Prep</ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="peopleLoadBoxHold"> 
+<div class="peopleLoadBox"></div></div>
+<ion-content padding class="appointPrepWraper">
+    
+<div class="toggleWraper">
+    <ion-segment [(ngModel)]="prep">
+    <ion-segment-button value="seeAll">
+      See All
+    </ion-segment-button>
+    <ion-segment-button value="seeStar">
+      See Starred
+    </ion-segment-button>
+  </ion-segment>
+ </div>
+
+<div [ngSwitch]="prep">
+  <ion-list *ngSwitchCase="'seeAll'">
+<div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
+<div class="pull-right redLink"><a href="#">Clear All</a></div>
+
+ <button ion-item>
+    <ion-icon item-left><img src="assets/img/blank-star.png"></ion-icon>
+    What is the diagnosis? 
+  </button>
+   <button ion-item>
+    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
+    What caused the disease or condition?
+  </button>
+
+   <button ion-item>
+    <ion-icon item-left><img src="assets/img/blank-star.png"></ion-icon>
+    How will it affect my home and work life?
+  </button>
+   <button ion-item>
+    <ion-icon item-left><img src="assets/img/blank-star.png"></ion-icon>
+    What is the short-term and long-term prognosis for my disease or condition?
+  </button>
+   <button ion-item>
+    <ion-icon item-left><img src="assets/img/blank-star.png"></ion-icon>
+    Is there more than one disease or condition that could be causing my symptoms? 
+  </button>
+  
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'seeStar'">
+ 
+     
+      <h2>Luna</h2>
+
+  </ion-list>
+</div>
+
+    
+    
+
+
+
+
+</ion-content>
