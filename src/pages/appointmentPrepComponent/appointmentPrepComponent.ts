@@ -1,21 +1,41 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import {AppointmentPrepService} from '../../services/appointmentPrepService';
+
 declare var jQuery: any;
 
 
 @Component({
   selector: 'appointmentPrepComponent',
-  templateUrl: 'appointmentPrepComponent.html'
+  templateUrl: 'appointmentPrepComponent.html',
+  providers:[AppointmentPrepService]
 })
 export class appointmentPrepComponent {
   prep: string = "seeAll";
+  public clickClass:string;
+  appointmentPrepData:any[];
+  diagnosisData :any[];
+  treatmentData :any[];
+  dataProPlaning:any[];
  
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public appointmentPrepService:AppointmentPrepService
+    ) {
+
+  var _that = this;  
+  this.appointmentPrepService.getAppointmentPrepData().subscribe((response)=>{   
+  this.diagnosisData = response.dataDiagnosis;
+  this.treatmentData = response.dataTreatment;
+  this.dataProPlaning = response.proPlaning;
+  setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+  setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+});
+  
     
   }
-
-
+    
 
   // code for card toggle 
   collapse(event) {
