@@ -15,7 +15,7 @@
     <ion-segment-button value="seeAll">
       See All
     </ion-segment-button>
-    <ion-segment-button value="seeStar">
+    <ion-segment-button value="seeStar" (click)="tabStarred()">
       See Starred
     </ion-segment-button>
   </ion-segment>
@@ -26,13 +26,16 @@
 
 <div class="headingWraper"> 
    <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
-   <div class="pull-right redLink"><a href="#">Clear All</a></div>
+   <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
 </div>
 
 <!-- Card for Diagnosis-->
-<div class="prepWhtBox lastBoder">
- <button ion-item *ngFor="let appointmentPrep of diagnosisData">
-    <ion-icon item-left><img src="{{appointmentPrep.imgPath}}"></ion-icon>
+<div class="prepWhtBox lastBoder" >
+ <button ion-item *ngFor="let appointmentPrep of diagnosisData" (click)="setStarred(appointmentPrep.id)">
+    <ion-icon item-left>
+      <img src="assets/img/blank-star.png" *ngIf="!checkStarred(appointmentPrep.id)">
+      <img src="assets/img/fill-star.png" *ngIf="checkStarred(appointmentPrep.id)">
+    </ion-icon>
    {{appointmentPrep.title}}
   </button>
   </div>
@@ -95,20 +98,14 @@
  
 <div class="headingWraper"> 
    <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
-   <div class="pull-right redLink"><a href="#">Clear All</a></div>
+   <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
 </div>
 <div class="prepWhtBox">
- <button ion-item>
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-    What is the diagnosis? 
-  </button>
-   <button ion-item>
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-    What caused the disease or condition?
-  </button>
-   <button ion-item class="dataLast">
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-    How will it affect my home and work life?
+ <button ion-item *ngFor="let diagnosis of diagnosisStarredData">
+    <ion-icon item-left>
+      <img src="assets/img/fill-star.png">
+    </ion-icon>
+   {{diagnosis.title}}
   </button>
  </div>
 

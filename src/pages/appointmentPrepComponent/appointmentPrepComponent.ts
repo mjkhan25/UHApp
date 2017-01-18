@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import {AppointmentPrepService} from '../../services/appointmentPrepService';
 
 declare var jQuery: any;
@@ -9,19 +10,26 @@ declare var jQuery: any;
 @Component({
   selector: 'appointmentPrepComponent',
   templateUrl: 'appointmentPrepComponent.html',
-  providers:[AppointmentPrepService]
+  providers:[AppointmentPrepService, Storage]
 })
 export class appointmentPrepComponent {
   prep: string = "seeAll";
   public clickClass:string;
   appointmentPrepData:any[];
+  
   diagnosisData :any[];
   treatmentData :any[];
   dataProPlaning:any[];
- 
+  
+  diagnosisStarredData :any[];
+  treatmentStarredData :any[];
+  dataProStarredPlaning:any[];
+
+  starredItems: any[];
   constructor(
     public navCtrl: NavController,
-    public appointmentPrepService:AppointmentPrepService
+    public appointmentPrepService:AppointmentPrepService,
+    public storage: Storage
     ) {
 
   var _that = this;  
@@ -29,13 +37,54 @@ export class appointmentPrepComponent {
   this.diagnosisData = response.dataDiagnosis;
   this.treatmentData = response.dataTreatment;
   this.dataProPlaning = response.proPlaning;
-  setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
-  setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+  //setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+  //setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
-  
     
+    // storage.ready().then(() => {
+    //   this.storage.get('starred').then((items) => {
+    //     if(items.constructor !== Array) {
+    //       this.storage.set('starred', []);
+    //     }
+        
+    //   });
+    // })
+    this.storage.get('starred').then((items) => {
+      this.starredItems = items;
+    })
   }
     
+  setStarred(id) {
+    let index = this.starredItems.indexOf(id);
+    if(index === -1) {
+      this.starredItems.push(id);
+    } else {
+      this.starredItems.splice(index, 1);
+    }
+    this.storage.set('starred', this.starredItems);
+  }
+
+  checkStarred(id) {
+    if(this.starredItems) {
+      return (this.starredItems.indexOf(id) !== -1);
+    } 
+    return false;
+  }
+
+  tabStarred() {
+    this.diagnosisStarredData = [];
+    for(var i in this.diagnosisData) {
+      if(this.starredItems.indexOf(this.diagnosisData[i].id) !== -1) {
+        this.diagnosisStarredData.push(this.diagnosisData[i]);
+      }
+    }
+  }
+
+  clearStarred() {
+    this.starredItems = [];
+    this.storage.set('starred', this.starredItems);
+    this.tabStarred();
+  }
 
   // code for card toggle 
   collapse(event) {

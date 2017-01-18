@@ -1,26 +1,26 @@
 {"dataDiagnosis":[
 {
-    "id": 1,
+    "id": "d1",
     "imgPath":"assets/img/blank-star.png",
     "title":"What is the diagnosis?"
 },
 {
-    "id": 2,
+    "id": "d2",
     "imgPath":"assets/img/fill-star.png",
     "title":" What caused the disease or condition?"
 },
 {
-    "id": 3,
+    "id": "d3",
     "imgPath":"assets/img/blank-star.png",
     "title":"  How will it affect my home and work life?"
 },
 {
-    "id": 4,
+    "id": "d4",
     "imgPath":"assets/img/blank-star.png",
     "title":" What is the short-term and long-term prognosis for my disease or condition? "
 },
 {
-    "id": 5,
+    "id": "d5",
     "imgPath":"assets/img/blank-star.png",
     "title":" Is there more than one disease or condition that could be causing my symptoms? "
 }
