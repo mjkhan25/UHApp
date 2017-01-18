@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><h2>UH News</h2></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <div class="togList"> 
+<ion-card  *ngFor="let UHNews of newsData">
+<ion-item>
+  <ion-label class="cardDescrip">
+    <h2> {{UHNews.title}}</h2>
+    <p> {{UHNews.pubDate}} </p>
+  </ion-label>
+</ion-item>
+<div class="upcomingClick" (click)="collapse($event)"></div>
+ <ion-card-content class="wrapBox">
+    <div class="togClass">
+     <p> <strong>Description:</strong> Description will come here...... </p>
+       <p> <strong>News Url:</strong> <a href="{{UHNews.link}}" target="_blank">{{UHNews.link}} </a> </p>
+       </div>
+  </ion-card-content>
+</ion-card>
+
+
+</div>
+
+
+
+
+</ion-content>
