@@ -16,6 +16,7 @@ import { aboutComponent } from '../pages/aboutComponent/aboutComponent';
 //import { cardComponent } from '../pages/cardComponent/cardComponent';
 import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent';
 import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appointmentPrepComponent';
+import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 
 @Component({
   templateUrl: 'app.html'
