@@ -50,11 +50,17 @@ export class appointmentPrepComponent {
     //   });
     // })
     this.storage.get('starred').then((items) => {
-      this.starredItems = items;
+      if(items) {
+        this.starredItems = items;
+      } else {
+        this.starredItems = [];
+      }
+     
     })
   }
     
   setStarred(id) {
+    console.log('calls');
     let index = this.starredItems.indexOf(id);
     if(index === -1) {
       this.starredItems.push(id);
@@ -72,12 +78,30 @@ export class appointmentPrepComponent {
   }
 
   tabStarred() {
+// Code for Diagnosis section
     this.diagnosisStarredData = [];
     for(var i in this.diagnosisData) {
       if(this.starredItems.indexOf(this.diagnosisData[i].id) !== -1) {
         this.diagnosisStarredData.push(this.diagnosisData[i]);
       }
+    };
+
+// Code for Treatment section
+   this.treatmentStarredData = [];
+    for(var i in this.treatmentData) {
+      if(this.starredItems.indexOf(this.treatmentData[i].id) !== -1) {
+        this.treatmentStarredData.push(this.treatmentData[i]);
+      }
+    };
+
+// Code for Procedure Planing
+   this.dataProStarredPlaning = [];
+    for(var i in this.dataProPlaning) {
+      if(this.starredItems.indexOf(this.dataProPlaning[i].id) !== -1) {
+        this.dataProStarredPlaning.push(this.dataProPlaning[i]);
+      }
     }
+
   }
 
   clearStarred() {

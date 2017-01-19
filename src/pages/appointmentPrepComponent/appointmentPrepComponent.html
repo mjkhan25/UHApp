@@ -29,7 +29,7 @@
    <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
 </div>
 
-<!-- Card for Diagnosis-->
+<!-- TAB 1 Card for Diagnosis-->
 <div class="prepWhtBox lastBoder" >
  <button ion-item *ngFor="let appointmentPrep of diagnosisData" (click)="setStarred(appointmentPrep.id)">
     <ion-icon item-left>
@@ -42,17 +42,18 @@
 
 <div class="headingWraper padTop10"><h4 class="appointLable">Treatment</h4></div>
 
-<!-- Card for Treatment-->
+<!-- TAB 1 Card for Treatment-->
 <div class="prepWhtBox lastBoder1">
-   <button ion-item *ngFor="let appointmentPrep of treatmentData">
-    <ion-icon item-left><img src="{{appointmentPrep.imgPath}}"></ion-icon>
+   <button ion-item *ngFor="let appointmentPrep of treatmentData" (click)="setStarred(appointmentPrep.id)">
+    <ion-icon item-left>
+       <img src="assets/img/blank-star.png" *ngIf="!checkStarred(appointmentPrep.id)">
+      <img src="assets/img/fill-star.png" *ngIf="checkStarred(appointmentPrep.id)">
+      </ion-icon>
    {{appointmentPrep.title}}
     </button>
   </div>
 
-<!-- <button ion-item> <ion-icon item-left><img src="assets/img/blank-star.png"></ion-icon> treatment options? </button>-->
-
-<!-- Card for Add Questions -->
+<!-- TAB 1 Card for Add Questions -->
 <div class="prepAddQuestion">
   <ion-card >
     <ion-item>
@@ -68,7 +69,7 @@
   </ion-card>
 </div>
 
-<!-- Card for Procedure Planing -->
+<!-- TAB 1 Card for Procedure Planing -->
 <div class="prepPPCard">
   <ion-card>
     <ion-item>
@@ -81,7 +82,8 @@
        
 <ion-item  *ngFor="let appointmentPrep of dataProPlaning">
   <ion-label> {{appointmentPrep.title}}</ion-label>
-  <ion-checkbox color="danger" checked="false"></ion-checkbox>
+  <ion-checkbox color="danger" checked="true" (click)="setStarred(appointmentPrep.id)" *ngIf="checkStarred(appointmentPrep.id)"></ion-checkbox>
+  <ion-checkbox color="danger" checked="false" (click)="setStarred(appointmentPrep.id)"  *ngIf="!checkStarred(appointmentPrep.id)"></ion-checkbox>
 </ion-item>
 
    <p class="padTop7 redLink"><a href="#">See more procedure planning resources.</a></p>
@@ -90,16 +92,16 @@
   </ion-card>
 </div>
 
-
   </ion-list>
 
   <ion-list *ngSwitchCase="'seeStar'">
 
- 
-<div class="headingWraper"> 
-   <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
-   <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
-</div>
+    <div class="headingWraper"> 
+      <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
+      <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
+    </div>
+
+<!-- TAB 2 Card for diagnosis -->
 <div class="prepWhtBox">
  <button ion-item *ngFor="let diagnosis of diagnosisStarredData">
     <ion-icon item-left>
@@ -113,25 +115,17 @@
 <h4 class="appointLable">Treatment</h4>
 </div>
 
+<!-- TAB 2 Card for TREATMENT -->
 <div class="prepWhtBox">
- <button ion-item>
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-   What are my treatment options? 
-  </button>
-   <button ion-item>
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-   How long will the treatment take?
-  </button>
-   <button ion-item>
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-   How will it affect my home and work life?
-  </button>
-   <button ion-item class="dataLast">
-    <ion-icon item-left><img src="assets/img/fill-star.png"></ion-icon>
-   What is the short-term and long-term prognosis for my disease or condition? 
+ <button ion-item *ngFor="let treatment of treatmentStarredData">
+    <ion-icon item-left>
+      <img src="assets/img/fill-star.png">
+    </ion-icon>
+   {{treatment.title}}
   </button>
  </div>
 
+<!-- TAB 2 Card for Procedure Planing -->
  <div class="prepPPCard">
   <ion-card>
     <ion-item>
@@ -141,18 +135,12 @@
   <ion-card-content class="wrapBox">
       <div class="togClass">
        <p class="font12 bodBottom">If you need a procedure, make sure you can answer these questions </p>
-<ion-item>
-  <ion-label>Take medication before surgery </ion-label>
-  <ion-checkbox color="danger" checked="false"></ion-checkbox>
-</ion-item>
-<ion-item>
-  <ion-label>Stop taking medication before surgery</ion-label>
-  <ion-checkbox color="danger" checked="false"></ion-checkbox>
-</ion-item>
-<ion-item>
-  <ion-label>Wash my hair and bathe the night before surgery </ion-label>
+
+<ion-item  *ngFor="let dataPlaning of dataProStarredPlaning">
+  <ion-label> {{dataPlaning.title}}</ion-label>
   <ion-checkbox color="danger" checked="true"></ion-checkbox>
 </ion-item>
+
 
 <p class="padTop7 redLink"><a href="#">See more procedure planning resources.</a></p>
  
