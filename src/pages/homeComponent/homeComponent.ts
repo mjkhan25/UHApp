@@ -5,18 +5,19 @@ import {directoryComponent} from '../directoryComponent/directoryComponent';
 import {tabComponent} from '../tabComponent/tabComponent';
 import {Login} from '../../modal/loginModal';
 import {LoginService} from '../../services/loginService';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home1',
   templateUrl: 'homeComponent.html',
-  providers:[LoginService]
+  providers:[LoginService, Storage]
 })
 
 export class homeComponent {
   public error: string
   
-  constructor(public navCtrl: NavController, public loginService:LoginService ) { 
-    
+  constructor(public navCtrl: NavController, public loginService:LoginService, public storage: Storage) { 
+    this.storage.remove('starred');
   }
 
   data:Login=new Login();
