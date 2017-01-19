@@ -1,27 +1,22 @@
 {"dataDiagnosis":[
 {
     "id": "d1",
-    "imgPath":"assets/img/blank-star.png",
     "title":"What is the diagnosis?"
 },
 {
     "id": "d2",
-    "imgPath":"assets/img/fill-star.png",
     "title":" What caused the disease or condition?"
 },
 {
     "id": "d3",
-    "imgPath":"assets/img/blank-star.png",
     "title":"  How will it affect my home and work life?"
 },
 {
     "id": "d4",
-    "imgPath":"assets/img/blank-star.png",
     "title":" What is the short-term and long-term prognosis for my disease or condition? "
 },
 {
     "id": "d5",
-    "imgPath":"assets/img/blank-star.png",
     "title":" Is there more than one disease or condition that could be causing my symptoms? "
 }
 
@@ -29,28 +24,23 @@
 "dataTreatment": 
 [
 {
-    "id": 1,
-    "imgPath":"assets/img/blank-star.png",
+    "id": "t1",
     "title":"What are my treatment options?"
 },
 {
-    "id": 2,
-    "imgPath":"assets/img/fill-star.png",
+    "id": "t2",
     "title":" How long will the treatment take?"
 },
 {
-    "id": 3,
-    "imgPath":"assets/img/blank-star.png",
+    "id": "t3",
     "title":"How will it affect my home and work life?"
 },
 {
-    "id": 4,
-    "imgPath":"assets/img/blank-star.png",
+    "id": "t4",
     "title":"What is the short-term and long-term prognosis for my disease or condition?"
 },
 {
-    "id": 5,
-    "imgPath":"assets/img/blank-star.png",
+    "id": "t5",
     "title":"Is there more than one disease or condition that could be causing my symptoms? "
 }
 
@@ -58,15 +48,15 @@
 "proPlaning": 
 [
 {
-    "id": 1,
+    "id": "p1",
     "title":"Take medication before surgery"
 },
 {
-    "id": 2,
+    "id": "p2",
     "title":" Stop taking medication before surgery"
 },
 {
-    "id": 3,
+    "id": "p3",
     "title":"Wash my hair and bathe the night before surgery"
 }
 ]

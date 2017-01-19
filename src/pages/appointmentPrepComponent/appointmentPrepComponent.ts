@@ -37,8 +37,8 @@ export class appointmentPrepComponent {
   this.diagnosisData = response.dataDiagnosis;
   this.treatmentData = response.dataTreatment;
   this.dataProPlaning = response.proPlaning;
-  //setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
-  //setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+  setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
+  setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
     
     this.storage.get('starred').then((items) => {
