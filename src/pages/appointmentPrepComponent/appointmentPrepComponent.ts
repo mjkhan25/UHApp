@@ -41,6 +41,7 @@ export class appointmentPrepComponent {
   setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
     
+    // code for Data storage 
     this.storage.get('starred').then((items) => {
       if(items) {
         this.starredItems = items;
@@ -49,7 +50,8 @@ export class appointmentPrepComponent {
       }
     })
   }
-    
+
+  // code for set and check star   
   setStarred(id) {
     console.log('calls');
     let index = this.starredItems.indexOf(id);
@@ -95,6 +97,7 @@ export class appointmentPrepComponent {
 
   }
 
+// Code for star clear all
   clearStarred() {
     this.starredItems = [];
     this.storage.remove('starred');
