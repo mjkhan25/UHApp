@@ -41,21 +41,12 @@ export class appointmentPrepComponent {
   //setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
     
-    // storage.ready().then(() => {
-    //   this.storage.get('starred').then((items) => {
-    //     if(items.constructor !== Array) {
-    //       this.storage.set('starred', []);
-    //     }
-        
-    //   });
-    // })
     this.storage.get('starred').then((items) => {
       if(items) {
         this.starredItems = items;
       } else {
         this.starredItems = [];
       }
-     
     })
   }
     
@@ -106,7 +97,7 @@ export class appointmentPrepComponent {
 
   clearStarred() {
     this.starredItems = [];
-    this.storage.set('starred', this.starredItems);
+    this.storage.remove('starred');
     this.tabStarred();
   }
 
