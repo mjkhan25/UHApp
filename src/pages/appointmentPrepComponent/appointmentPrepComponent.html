@@ -54,14 +54,17 @@
   </div>
 
 <!-- TAB 1 Listed  Questions here-->
-<div class="questionCard" *ngIf="questionArray != 0">
+<div class="questionCard">
 <div class="headingWraper padTop10"><h4 class="appointLable"> Your Questions</h4></div>
-
-<div class="prepWhtBox lastBoder1">
-       <ol>
-         <li *ngFor="let AddQuestion of questionArray">{{AddQuestion}}</li>
-         </ol>
-  </div>
+<div class="prepWhtBox" *ngIf="questionData != 0">
+<button ion-item *ngFor="let question of questionData" (click)="setStarred(question.id)">
+    <ion-icon item-left>
+       <img src="assets/img/blank-star.png" *ngIf="!checkStarred(question.id)">
+      <img src="assets/img/fill-star.png" *ngIf="checkStarred(question.id)">
+      </ion-icon>
+   {{question.title}}
+    </button>
+</div>
   </div>
 
 
@@ -75,8 +78,9 @@
   <ion-card-content class="wrapBox">
       <div class="togClass">
  <ion-item class="widthInput">
-       <ion-input placeholder="Type Question here" [(ngModel)]="questionData"></ion-input>
+       <ion-input placeholder="Type Question here" [(ngModel)]="question"></ion-input>
   </ion-item>
+
 
     <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="addQuestions()">Add</button>
@@ -142,6 +146,19 @@
     </ion-icon>
    {{treatment.title}}
   </button>
+ </div>
+
+  <div class="headingWraper padTop10"> 
+<h4 class="appointLable">Your Questions</h4>
+</div>
+<!-- TAB 2 Card for Questions -->
+<div class="prepWhtBox">
+<button ion-item *ngFor="let question of questionDataStarred">
+    <ion-icon item-left>
+      <img src="assets/img/fill-star.png">
+      </ion-icon>
+   {{question.title}}
+    </button>
  </div>
 
 <!-- TAB 2 Card for Procedure Planing -->

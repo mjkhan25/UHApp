@@ -18,6 +18,7 @@ export class homeComponent {
   
   constructor(public navCtrl: NavController, public loginService:LoginService, public storage: Storage) { 
     this.storage.remove('starred');
+     this.storage.remove('question');
   }
 
   data:Login=new Login();

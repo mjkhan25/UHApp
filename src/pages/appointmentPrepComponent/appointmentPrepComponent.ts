@@ -28,10 +28,12 @@ sendValues(): void {
   diagnosisStarredData :any[];
   treatmentStarredData :any[];
   dataProStarredPlaning:any[];
+  questionDataStarred: any[];
 
   starredItems: any[];
-  questionArray: any[];
-  questionData:string;
+  question: string;
+  questionData:any[];
+  
 
   constructor(
     public navCtrl: NavController,
@@ -39,12 +41,12 @@ sendValues(): void {
     public storage: Storage
     ) {
 
-  var _that = this;  
+  var _that = this; 
   this.appointmentPrepService.getAppointmentPrepData().subscribe((response)=>{   
   this.diagnosisData = response.dataDiagnosis;
   this.treatmentData = response.dataTreatment;
   this.dataProPlaning = response.proPlaning;
-  this.questionArray=[];
+  
   setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
   setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
@@ -55,6 +57,14 @@ sendValues(): void {
         this.starredItems = items;
       } else {
         this.starredItems = [];
+      }
+    })
+
+    this.storage.get('question').then((items) => {
+      if(items) {
+        this.questionData = items;
+      } else {
+        this.questionData = [];
       }
     })
   }
@@ -104,6 +114,14 @@ sendValues(): void {
       }
     }
 
+  // Code for questions
+   this.questionDataStarred = [];
+    for(var i in this.questionData) {
+      if(this.starredItems.indexOf(this.questionData[i].id) !== -1) {
+        this.questionDataStarred.push(this.questionData[i]);
+      }
+    }
+
   }
 
 //clear all star
@@ -115,8 +133,10 @@ sendValues(): void {
 
 //Add Question
    addQuestions() {
-    this.clickClass ="";
-    this.questionArray.push(this.questionData);
+    let id = 'Q'+this.questionData.length;
+    this.questionData.push({id:id, title: this.question});
+    this.question = null;
+    this.storage.set('question', this.questionData);
     }
 
 

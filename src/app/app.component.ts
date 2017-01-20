@@ -25,6 +25,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = homeComponent;
+  //rootPage: any = appointmentPrepComponent;
   pages: Array<{title: string, component: any, sidebarclassname:string}>;
 
   constructor(public platform: Platform, private app: App) {
