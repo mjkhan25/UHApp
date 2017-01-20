@@ -14,6 +14,10 @@ declare var jQuery: any;
 })
 export class appointmentPrepComponent {
   prep: string = "seeAll";
+  str: string;
+sendValues(): void {
+//do sth with the str e.g. console.log(this.str);
+}
   public clickClass:string;
   appointmentPrepData:any[];
   
@@ -26,6 +30,9 @@ export class appointmentPrepComponent {
   dataProStarredPlaning:any[];
 
   starredItems: any[];
+  questionArray: any[];
+  questionData:string;
+
   constructor(
     public navCtrl: NavController,
     public appointmentPrepService:AppointmentPrepService,
@@ -37,6 +44,7 @@ export class appointmentPrepComponent {
   this.diagnosisData = response.dataDiagnosis;
   this.treatmentData = response.dataTreatment;
   this.dataProPlaning = response.proPlaning;
+  this.questionArray=[];
   setTimeout(function(){ jQuery( ".lastBoder .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
   setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
@@ -104,6 +112,14 @@ export class appointmentPrepComponent {
     this.storage.remove('starred');
     this.tabStarred();
   }
+
+//Add Question
+   addQuestions() {
+    this.clickClass ="";
+    this.questionArray.push(this.questionData);
+    }
+
+
 
   // code for card toggle 
   collapse(event) {
