@@ -53,6 +53,19 @@
     </button>
   </div>
 
+<div class="headingWraper padTop10"><h4 class="appointLable">Add Questions</h4></div>
+
+<!-- TAB 1 Listed  Questions Box-->
+<div class="prepWhtBox lastBoder1">
+   <button ion-item>
+    <ion-icon item-left>
+      
+      </ion-icon>
+  
+    </button>
+  </div>
+
+
 <!-- TAB 1 Card for Add Questions -->
 <div class="prepAddQuestion">
   <ion-card >
@@ -62,8 +75,15 @@
     <div class="cardClick" (click)="collapse($event)"></div>
   <ion-card-content class="wrapBox">
       <div class="togClass">
-       <p class="textComment"><textarea rows="4"></textarea> </p>
-       <p class="pull-right"> <button ion-button class="btnRedNormal">Submit</button></p>
+ <ion-item class="widthInput">
+       <ion-input placeholder="Type Question here"></ion-input>
+  </ion-item>
+
+    <ion-label item-right class="cardButton">
+    <button class="mapRedBtn">Add</button>
+    </ion-label>
+ 
+       
        </div>
    </ion-card-content>
   </ion-card>

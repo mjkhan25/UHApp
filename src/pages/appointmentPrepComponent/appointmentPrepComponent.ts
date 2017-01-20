@@ -41,7 +41,7 @@ export class appointmentPrepComponent {
   setTimeout(function(){ jQuery( ".lastBoder1 .item-inner" ).last().addClass( "noLastBoder" ); }, 100);
 });
     
-    // code for Data storage 
+    //set previous stored data
     this.storage.get('starred').then((items) => {
       if(items) {
         this.starredItems = items;
@@ -51,9 +51,8 @@ export class appointmentPrepComponent {
     })
   }
 
-  // code for set and check star   
+  //set/unset star after click   
   setStarred(id) {
-    console.log('calls');
     let index = this.starredItems.indexOf(id);
     if(index === -1) {
       this.starredItems.push(id);
@@ -63,6 +62,7 @@ export class appointmentPrepComponent {
     this.storage.set('starred', this.starredItems);
   }
 
+  //checked previous selected star 
   checkStarred(id) {
     if(this.starredItems) {
       return (this.starredItems.indexOf(id) !== -1);
@@ -70,6 +70,7 @@ export class appointmentPrepComponent {
     return false;
   }
 
+  //set data for starred tab
   tabStarred() {
 // Code for Diagnosis section
     this.diagnosisStarredData = [];
@@ -97,7 +98,7 @@ export class appointmentPrepComponent {
 
   }
 
-// Code for star clear all
+//clear all star
   clearStarred() {
     this.starredItems = [];
     this.storage.remove('starred');
