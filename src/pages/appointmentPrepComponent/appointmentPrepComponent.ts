@@ -80,6 +80,12 @@ sendValues(): void {
     this.storage.set('starred', this.starredItems);
   }
 
+  removeStarred(id) {
+     let index = this.starredItems.indexOf(id);
+     this.starredItems.splice(index, 1);
+     this.tabStarred();
+  }
+
   //checked previous selected star 
   checkStarred(id) {
     if(this.starredItems) {
@@ -128,6 +134,8 @@ sendValues(): void {
   clearStarred() {
     this.starredItems = [];
     this.storage.remove('starred');
+    this.questionData = [];
+    this.storage.remove('question');
     this.tabStarred();
   }
 
@@ -137,6 +145,7 @@ sendValues(): void {
     this.questionData.push({id:id, title: this.question});
     this.question = null;
     this.storage.set('question', this.questionData);
+    this.setStarred(id);
     }
 
 

@@ -81,7 +81,6 @@
        <ion-input placeholder="Type Question here" [(ngModel)]="question"></ion-input>
   </ion-item>
 
-
     <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="addQuestions()">Add</button>
     </ion-label>
@@ -118,54 +117,55 @@
   </ion-list>
 
   <ion-list *ngSwitchCase="'seeStar'">
-
+<div class="pull-right redLink tab2Clear"><a href="#" (click)="clearStarred()">Clear All</a></div>
 
 <div *ngIf="diagnosisStarredData != 0">
-    <div class="headingWraper"> 
+    <div class="headingWraper tab2HeadingWidth80"> 
       <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
-      <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
+      <!--<div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>-->
     </div>
 
 <!-- TAB 2 Card for diagnosis -->
 <div class="prepWhtBox">
- <button ion-item *ngFor="let diagnosis of diagnosisStarredData">
+ <button ion-item *ngFor="let appointmentPrep of diagnosisStarredData" (click)="removeStarred(appointmentPrep.id)">
     <ion-icon item-left>
       <img src="assets/img/fill-star.png">
     </ion-icon>
-   {{diagnosis.title}}
+   {{appointmentPrep.title}}
   </button>
  </div>
  </div>
 
 
 <div *ngIf="treatmentStarredData != 0">
-<div class="headingWraper padTop10"> 
+<div class="headingWraper padTop10 tab2HeadingWidth80"> 
 <h4 class="appointLable">Treatment</h4>
 </div>
 
 <!-- TAB 2 Card for TREATMENT -->
 <div class="prepWhtBox">
- <button ion-item *ngFor="let treatment of treatmentStarredData">
+   <button ion-item *ngFor="let appointmentPrep of treatmentStarredData" (click)="removeStarred(appointmentPrep.id)">
     <ion-icon item-left>
-      <img src="assets/img/fill-star.png">
-    </ion-icon>
-   {{treatment.title}}
-  </button>
+   <img src="assets/img/fill-star.png">
+      </ion-icon>
+   {{appointmentPrep.title}}
+    </button>
  </div>
  </div>
 
 <div *ngIf="questionDataStarred != 0">
-<div class="headingWraper padTop10"> 
+<div class="headingWraper padTop10 tab2HeadingWidth80"> 
 <h4 class="appointLable">Your Questions</h4>
 </div>
 <!-- TAB 2 Card for Questions -->
 <div class="prepWhtBox">
-<button ion-item *ngFor="let question of questionDataStarred">
+  <button ion-item *ngFor="let question of questionDataStarred" (click)="removeStarred(question.id)">
     <ion-icon item-left>
-      <img src="assets/img/fill-star.png">
+    <img src="assets/img/fill-star.png">
       </ion-icon>
    {{question.title}}
-    </button>
+  </button>
+
  </div>
  </div>
 
@@ -180,9 +180,10 @@
       <div class="togClass">
        <p class="font12 bodBottom">If you need a procedure, make sure you can answer these questions </p>
 
-<ion-item  *ngFor="let dataPlaning of dataProStarredPlaning">
-  <ion-label> {{dataPlaning.title}}</ion-label>
-  <ion-checkbox color="danger" checked="true" disabled="true"></ion-checkbox>
+<ion-item  *ngFor="let appointmentPrep of dataProPlaning">
+  <ion-label> {{appointmentPrep.title}}</ion-label>
+  <ion-checkbox color="danger" checked="true" (click)="setStarred(appointmentPrep.id)" *ngIf="checkStarred(appointmentPrep.id)"></ion-checkbox>
+  <ion-checkbox color="danger" checked="false" (click)="setStarred(appointmentPrep.id)"  *ngIf="!checkStarred(appointmentPrep.id)"></ion-checkbox>
 </ion-item>
 
 
