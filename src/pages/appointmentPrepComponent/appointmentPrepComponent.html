@@ -119,6 +119,8 @@
 
   <ion-list *ngSwitchCase="'seeStar'">
 
+
+<div *ngIf="diagnosisStarredData != 0">
     <div class="headingWraper"> 
       <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
       <div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>
@@ -133,8 +135,11 @@
    {{diagnosis.title}}
   </button>
  </div>
+ </div>
 
- <div class="headingWraper padTop10"> 
+
+<div *ngIf="treatmentStarredData != 0">
+<div class="headingWraper padTop10"> 
 <h4 class="appointLable">Treatment</h4>
 </div>
 
@@ -147,8 +152,10 @@
    {{treatment.title}}
   </button>
  </div>
+ </div>
 
-  <div class="headingWraper padTop10"> 
+<div *ngIf="questionDataStarred != 0">
+<div class="headingWraper padTop10"> 
 <h4 class="appointLable">Your Questions</h4>
 </div>
 <!-- TAB 2 Card for Questions -->
@@ -159,6 +166,7 @@
       </ion-icon>
    {{question.title}}
     </button>
+ </div>
  </div>
 
 <!-- TAB 2 Card for Procedure Planing -->
