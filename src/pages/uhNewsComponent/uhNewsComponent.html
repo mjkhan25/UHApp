@@ -19,8 +19,8 @@
 <div class="upcomingClick" (click)="collapse($event)"></div>
  <ion-card-content class="wrapBox">
     <div class="togClass">
-     <p> <strong>Description:</strong> Description will come here...... </p>
-       <p> <strong>News Url:</strong> <a href="{{UHNews.link}}" target="_blank">{{UHNews.link}} </a> </p>
+     <div class="shortDescription" [innerHTML]="UHNews.description">  </div>
+      <p class="seeMoreLink" (click)="getUHNewsDescription(UHNews.description)">See More </p>
        </div>
   </ion-card-content>
 </ion-card>

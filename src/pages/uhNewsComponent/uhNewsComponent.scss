@@ -2,7 +2,7 @@ togList {
 
 }
 
-.togList h2 { font-size: 17px; color: #444444;  font-family: fru-tiger-bold; overflow: visible; line-height: 18px; margin: 5px 0px;}
+.togList h2 { font-size: 17px; color: #444444;  font-family: fru-tiger-bold; overflow: visible; /*line-height: 18px;*/ margin: 5px 0px;}
 .togList p { font-family: fru-tiger-roman; font-size: 12px;}
 .togList p a {font-size: 11px; color:#2497c6}
 
@@ -11,6 +11,11 @@ togList {
 .togList .departHead{ font-family: fru-tiger-bold; font-size:17px; color:#444444}
 .togList .card{margin-bottom:10px;}
 .togList .cardDescrip { white-space: normal;}
+
+.shortDescription{max-height:150px; overflow: hidden; text-overflow: ellipsis;}
+.seeMoreLink { color: #ef3a42!important; font-size: 12px; background: url(../assets/img/detArrow.png) no-repeat 55px 3px;}
+
+
 
 
 

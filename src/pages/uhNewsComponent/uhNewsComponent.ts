@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import {UHNewsService} from '../../services/uhNewsService';
+import {uhNewsDescriptionComponent} from '../uhNewsDescriptionComponent/uhNewsDescriptionComponent';
 declare var jQuery: any;
 declare const X2JS: any;
 
@@ -11,10 +12,15 @@ declare const X2JS: any;
  
 })
 export class uhNewsComponent {
-  public clickClass:string;
+    public clickClass:string;
+    getUHNewsDescription(newsDataDesc) {
+        this.clickClass =""
+        this.navCtrl.push(uhNewsDescriptionComponent,{newsDataDesc: newsDataDesc});
+    }
   //getUHNews:any[];
    x2js: any;
    newsData:any[];
+   
 
 
   constructor(

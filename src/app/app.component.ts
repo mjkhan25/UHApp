@@ -17,6 +17,7 @@ import { aboutComponent } from '../pages/aboutComponent/aboutComponent';
 import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent';
 import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appointmentPrepComponent';
 import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
+import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = homeComponent;
-  //rootPage: any = appointmentPrepComponent;
+  //rootPage: any = uhNewsComponent;
   pages: Array<{title: string, component: any, sidebarclassname:string}>;
 
   constructor(public platform: Platform, private app: App) {
