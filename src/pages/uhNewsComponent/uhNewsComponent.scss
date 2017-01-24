@@ -12,8 +12,8 @@ togList {
 .togList .card{margin-bottom:10px;}
 .togList .cardDescrip { white-space: normal;}
 
-.shortDescription{max-height:150px; overflow: hidden; text-overflow: ellipsis;}
-.seeMoreLink { color: #ef3a42!important; font-size: 12px; background: url(../assets/img/detArrow.png) no-repeat 55px 3px;}
+.shortDescription{max-height:125px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 6;  -webkit-box-orient: vertical;}
+.seeMoreLink { color: #ef3a42!important; font-size: 12px; background: url(../assets/img/detArrow.png) no-repeat 55px 13px; padding-top: 10px;}
 
 
 
