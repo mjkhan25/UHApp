@@ -80,6 +80,7 @@ sendValues(): void {
     this.storage.set('starred', this.starredItems);
   }
 
+//remove/set star after click in Starred Tab
   removeStarred(id) {
      let index = this.starredItems.indexOf(id);
      this.starredItems.splice(index, 1);
