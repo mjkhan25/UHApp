@@ -18,6 +18,7 @@ import {AppointmentService} from '../services/appointmentService';
 import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appointmentPrepComponent';
 import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
+import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/
     feedbackComponent,
     appointmentPrepComponent,
     uhNewsComponent,
-    uhNewsDescriptionComponent
+    uhNewsDescriptionComponent,
+    uhVideosComponent
     
   ],
   imports: [
@@ -60,7 +62,8 @@ import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/
     feedbackComponent,
     appointmentPrepComponent,
     uhNewsComponent,
-    uhNewsDescriptionComponent
+    uhNewsDescriptionComponent,
+    uhVideosComponent
     
   ],
   providers: [{provide: [ErrorHandler, LoginService,AppointmentService], useClass: IonicErrorHandler}]

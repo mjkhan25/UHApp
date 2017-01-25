@@ -18,6 +18,7 @@ import { feedbackComponent } from '../pages/feedbackComponent/feedbackComponent'
 import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appointmentPrepComponent';
 import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
+import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent';
 
 @Component({
   templateUrl: 'app.html'
