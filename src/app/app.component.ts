@@ -3,7 +3,7 @@ import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { homeComponent } from '../pages/homeComponent/homeComponent';
-import { Page2 } from '../pages/page2/page2';
+//import { Page2 } from '../pages/page2/page2';
 import { appointmentsComponent } from '../pages/appointmentsComponent/appointmentsComponent';
 import { directoryComponent } from '../pages/directoryComponent/directoryComponent';
 import { departmentComponent } from '../pages/departmentComponent/departmentComponent';
@@ -27,7 +27,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = homeComponent;
-  //rootPage: any = uhNewsComponent;
+  //rootPage: any = appointmentsComponent;
   pages: Array<{title: string, component: any, sidebarclassname:string}>;
 
   constructor(public platform: Platform, private app: App) {

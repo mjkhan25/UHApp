@@ -30,18 +30,19 @@ export class tabComponent {
 
   constructor(public navCtrl: NavController, private navParams:NavParams) {
 
-  //Show tab  
+  //Show tab
   this.tab1Root = appointmentsComponent;
   this.tab2Root = guideComponent;
   this.tab3Root = directoryComponent;
   this.tab4Root = exploreComponent;
-  
+
   //Hide Tab
   this.tab5Root = aboutComponent;
   this.tab6Root = feedbackComponent;
   this.tab7Root = helpComponent;
-    
+
     this.directoryTab = navParams.get('eventObj');
+  
     if( this.directoryTab =='directory')
     {
     this.tabsIndex =2;
@@ -52,7 +53,5 @@ export class tabComponent {
     if(jQuery('.bar-button-default-md.show-back-button').length > 0) {
       jQuery('.bar-button-default-md.show-back-button').trigger('click');
     }
-  } 
+  }
 }
-
-

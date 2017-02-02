@@ -7,11 +7,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="">
+<ion-content padding>
     
-<div class="expolorWrap paddingTop15 guidBox">
+<div class="expolorWrap">
+
+<div *ngFor="let UHVideos of videoData">
+  <div class="VideoBox">
+   <h3 class="pull-left"> {{UHVideos.title}} </h3>
+    <p> {{UHVideos.author.name}} </p>
+  
+    <iframe width="320" border="0" height="315" [src]="UHVideos.group.content._url | safe">
+    </iframe>
     
-videos data
+
+   </div>
+  
+
+  </div>    
+
    
      </div>
 

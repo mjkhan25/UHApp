@@ -5,3 +5,10 @@ tabComponent {
 .tabs-md .tab-button[aria-selected=true]{color:#ef3a42}
 .tabs-md .tab-button { color:#6b6b6b}
 
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #ef3a42;   
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-text {
+    -webkit-transform: inherit; transform: inherit;
+    }

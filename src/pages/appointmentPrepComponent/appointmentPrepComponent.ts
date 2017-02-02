@@ -87,6 +87,8 @@ sendValues(): void {
      this.tabStarred();
   }
 
+
+
   //checked previous selected star 
   checkStarred(id) {
     if(this.starredItems) {
@@ -128,7 +130,6 @@ sendValues(): void {
         this.questionDataStarred.push(this.questionData[i]);
       }
     }
-
   }
 
 //clear all star
@@ -142,14 +143,22 @@ sendValues(): void {
 
 //Add Question
    addQuestions() {
-    let id = 'Q'+this.questionData.length;
+    let random = Math.round(new Date().getTime()/1000);
+    let id = 'Q'+random;
     this.questionData.push({id:id, title: this.question});
     this.question = null;
     this.storage.set('question', this.questionData);
     this.setStarred(id);
     }
 
-
+//remove Question using delete icon 
+  removeQuestion(id) {
+     //let index = this.questionData.indexOf(id);
+     let index = this.questionData.findIndex(x => x.id==id);
+     this.questionData.splice(index, 1);
+     this.tabStarred();
+     this.storage.set('question', this.questionData);
+  }
 
   // code for card toggle 
   collapse(event) {

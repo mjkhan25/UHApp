@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { homeComponent } from '../pages/homeComponent/homeComponent';
-import { Page2 } from '../pages/page2/page2';
+//import { Page2 } from '../pages/page2/page2';
 import { appointmentsComponent } from '../pages/appointmentsComponent/appointmentsComponent';
 import { directoryComponent } from '../pages/directoryComponent/directoryComponent';
 import { departmentComponent } from '../pages/departmentComponent/departmentComponent';
@@ -19,13 +19,25 @@ import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appo
 import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
 import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent';
+import { SafePipe } from '../pages/uhVideosComponent/uhVideosComponent';
+//import { firebase } from 'firebase-angular2/core';
+import { AngularFireModule } from 'angularfire2';
+
+// YOUR SETTINGS GOES HERE!
+export const firebaseConfig = {
+  apiKey: "AIzaSyBEILoDOPglEO7UCgqAF4BKRi2iQD43aT4",
+  authDomain: "uhmobileadmin.firebaseapp.com",
+  databaseURL: "https://uhmobileadmin.firebaseio.com",
+  storageBucket: "uhmobileadmin.appspot.com",
+  messagingSenderId: "294182293302"
+};
 
 
 @NgModule({
   declarations: [
     MyApp,
     homeComponent,
-    Page2,
+    //Page2,
     appointmentsComponent,
     directoryComponent,
     departmentComponent,
@@ -39,17 +51,20 @@ import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent'
     appointmentPrepComponent,
     uhNewsComponent,
     uhNewsDescriptionComponent,
-    uhVideosComponent
-    
+    uhVideosComponent,
+    SafePipe
+    //firebase
+
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  bootstrap: [IonicApp],  
+  bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     homeComponent,
-    Page2,
+    //Page2,
     appointmentsComponent,
     directoryComponent,
     departmentComponent,
@@ -64,7 +79,7 @@ import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent'
     uhNewsComponent,
     uhNewsDescriptionComponent,
     uhVideosComponent
-    
+
   ],
   providers: [{provide: [ErrorHandler, LoginService,AppointmentService], useClass: IonicErrorHandler}]
 })

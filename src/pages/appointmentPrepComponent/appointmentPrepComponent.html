@@ -57,13 +57,16 @@
 <div class="questionCard">
 <div class="headingWraper padTop10"><h4 class="appointLable"> Your Questions</h4></div>
 <div class="prepWhtBox" *ngIf="questionData != 0">
-<button ion-item *ngFor="let question of questionData" (click)="setStarred(question.id)">
+<div *ngFor="let question of questionData"  class="carBtnHold">
+<button ion-item (click)="setStarred(question.id)">
     <ion-icon item-left>
        <img src="assets/img/blank-star.png" *ngIf="!checkStarred(question.id)">
       <img src="assets/img/fill-star.png" *ngIf="checkStarred(question.id)">
       </ion-icon>
    {{question.title}}
-    </button>
+     </button>
+     <div class="trashIcon" (click)="removeQuestion(question.id)"> <img src="assets/img/iconTrash.png"></div>
+      </div>
 </div>
   </div>
 
@@ -122,8 +125,7 @@
 <div *ngIf="diagnosisStarredData != 0">
     <div class="headingWraper tab2HeadingWidth80"> 
       <div class="pull-left"> <h4 class="appointLable">Diagnosis</h4></div>
-      <!--<div class="pull-right redLink"><a href="#" (click)="clearStarred()">Clear All</a></div>-->
-    </div>
+     </div>
 
 <!-- TAB 2 Card for diagnosis -->
 <div class="prepWhtBox">
@@ -176,7 +178,7 @@
       <ion-label class="textBlock"></ion-label>
     </ion-item>
     <div class="cardClick" (click)="collapse($event)"></div>
-  <ion-card-content class="wrapBox" style="display:block">
+  <ion-card-content class="wrapBox" [style.display]="dataProStarredPlaning.length >0 ? 'block': 'none'" >
       <div class="togClass">
        <p class="font12 bodBottom">If you need a procedure, make sure you can answer these questions </p>
 

@@ -9,18 +9,21 @@
 
 <ion-content padding class="appointment">
 
+ 
+
   <div class="">
   <h4 class="appointLable">Today</h4>
+  
 
-<ion-card class="appontCard" *ngFor="let appointment of todayAppointments; let i = index">
+  <ion-card class="appontCard" *ngFor="let doctor of filterDoctors; let i = index">
    <ion-item>
      <ion-avatar item-left>
-    <img src="{{appointment.imgPath}}">
+    <img src="assets/img/thumb.png">
     </ion-avatar>
        <ion-label class="cardDescrip">
-      <h2> {{appointment.appointmentDateTime}}</h2>
-    <p> {{appointment.name}}</p>
-    <p> {{appointment.title}}</p>
+      <h2>{{doctor.appointment.CheckedInTime}}</h2>
+   <p> {{doctor.name}}</p>
+    <p> {{doctor.title}}</p>
       </ion-label>
       <ion-label item-right class="cardButton">
     <button class="mapRedBtn" (click)="openModal()">Map It</button>
@@ -29,16 +32,44 @@
   <div class="upcomingClick" (click)="collapse($event)" [class.upcomingDown]="i==0"></div>
   <ion-card-content class="wrapBox" [style.display]="i==0 ? 'block': 'none'">
     <div class="togClass">
-    <p> <strong>Department:</strong>  {{appointment.department}} </p>
+    <!--<p> <strong>Department:</strong>  {{appointment.dept}} </p>
      <p> <strong>Location:</strong> {{appointment.location}} </p>
-       <p> <strong>Phone:</strong> {{appointment.phone}} </p>
+       <p> <strong>Phone:</strong> {{appointment.phone}} </p>-->
+      
        </div>
     </ion-card-content>
   </ion-card>
 
+
+
   <h4 class="appointLable hadTopspace">Upcoming</h4>
 
-<ion-card class="appontCard" *ngFor="let appointment of upcomingAppointments">
+   <ion-card class="appontCard" *ngFor="let appointment of doctorData">
+   <ion-item>
+     <ion-avatar item-left>
+    <img src="assets/img/thumb.png">
+    </ion-avatar>
+       <ion-label class="cardDescrip">
+      <h2> {{appointment.specialty}}</h2>
+    <p> {{appointment.name}}</p>
+    <p> {{appointment.title}}</p>
+      </ion-label>
+      <ion-label item-right class="cardButton">
+    <button class="mapRedBtn" (click)="openModal()">Map It</button>
+    </ion-label>
+  </ion-item>
+  <div class="upcomingClick" (click)="collapse($event)"></div>
+  <ion-card-content class="wrapBox">
+    <div class="togClass">
+    <p> <strong>Department:</strong>  {{appointment.dept}} </p>
+     <p> <strong>Location:</strong> {{appointment.location}} </p>
+       <p> <strong>Phone:</strong> {{appointment.phone}} </p>
+      
+       </div>
+    </ion-card-content>
+  </ion-card>
+
+<!--<ion-card class="appontCard" *ngFor="let appointment of upcomingAppointments">
    <ion-item>
      <ion-avatar item-left>
     <img src="{{appointment.imgPath}}">
@@ -60,7 +91,7 @@
        <p> <strong>Phone:</strong> {{appointment.phone}} </p>
        </div>
     </ion-card-content>
-</ion-card>
+</ion-card>-->
 <p></p>
 
 </div>
