@@ -5,17 +5,17 @@
     </button>
     <ion-title>Appointments</ion-title>
   </ion-navbar>
-</ion-header> 
+</ion-header>
 
 <ion-content padding class="appointment">
 
- 
+
 
   <div class="">
-  <h4 class="appointLable">Today</h4>
-  
+  <h4 class="appointLable">{{todayTitle}}</h4>
 
-  <ion-card class="appontCard" *ngFor="let doctor of filterDoctors; let i = index">
+
+  <ion-card class="appontCard" *ngFor="let doctor of filterTodayAppointments; let i = index">
    <ion-item>
      <ion-avatar item-left>
     <img src="assets/img/thumb.png">
@@ -35,7 +35,7 @@
     <p> <strong>Department:</strong> {{doctor.dept}} </p>
      <p> <strong>Location:</strong> {{doctor.location}} </p>
        <p> <strong>Phone:</strong> {{doctor.phone}} </p>
-      
+
        </div>
     </ion-card-content>
   </ion-card>
@@ -44,7 +44,7 @@
 
   <h4 class="appointLable hadTopspace">Upcoming</h4>
 
-   <ion-card class="appontCard" *ngFor="let doctor of filterDoctors">
+   <ion-card class="appontCard" *ngFor="let doctor of filterAppointments">
    <ion-item>
      <ion-avatar item-left>
     <img src="assets/img/thumb.png">
@@ -64,7 +64,7 @@
      <p> <strong>Department:</strong> {{doctor.dept}} </p>
      <p> <strong>Location:</strong> {{doctor.location}} </p>
        <p> <strong>Phone:</strong> {{doctor.phone}} </p>
-      
+
        </div>
     </ion-card-content>
   </ion-card>
