@@ -29,6 +29,7 @@ export class appointmentsComponent {
   filterTodayAppointments:any[];
   filterAppointments:any[];
   todayTitle: string;
+  setDob:string;
   constructor(
     public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -77,8 +78,6 @@ export class appointmentsComponent {
       });
 
 this.filterDoctors.forEach(doctorsElement => {
-//var datePipeApp = new DatePipe();
-//var datePipe=new DatePipe();
 var datePipeApp = new DatePipe('en-US');
 var datePipe = new DatePipe('en-US');
 console.log("----------------------------------");
@@ -96,7 +95,7 @@ console.log("----------------------------------");
   console.log("yes");
   this.filterTodayAppointments.push(doctorsElement);
   }
-else
+else if(this.setDob > datePipe.transform(new Date(),'dd/MM/yyyy'))
 {
 this.filterAppointments.push(doctorsElement);
 }
