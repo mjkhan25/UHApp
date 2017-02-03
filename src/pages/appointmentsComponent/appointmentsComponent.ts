@@ -61,15 +61,10 @@ export class appointmentsComponent {
     appointmentObservable.subscribe(value => {
 
       this.appointments = value;
-      console.log(this.appointments);
+      //console.log(this.appointments);
       this.getAllDoctor();
     })
 
-
-    // queryObservable.subscribe(queriedItems  => {
-    //     console.log(queriedItems);
-    //    this.doctorData = queriedItems;
-    //   });
 
   }
 
