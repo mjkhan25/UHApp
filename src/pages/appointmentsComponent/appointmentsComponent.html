@@ -12,66 +12,67 @@
 
 
   <div class="">
-  <h4 class="appointLable">Today</h4>
+
+    <h4 class="appointLable hadTopspace" *ngIf="filterTodayAppointments == 0">Today - No Scheduled Appointments</h4>
+    <h4 class="appointLable hadTopspace" *ngIf="filterTodayAppointments != 0">Today</h4>
 
 
-  <ion-card class="appontCard" *ngFor="let doctor of filterTodayAppointments; let i = index">
-   <ion-item>
-     <ion-avatar item-left>
-    <img src="assets/img/thumb.png">
-    </ion-avatar>
-       <ion-label class="cardDescrip">
-      <h2>{{doctor.appointment.appttime}}</h2>
-   <p> {{doctor.name}}</p>
-    <p> {{doctor.title}}</p>
-      </ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="openModal()">Map It</button>
-    </ion-label>
-  </ion-item>
-  <div class="upcomingClick" (click)="collapse($event)" [class.upcomingDown]="i==0"></div>
-  <ion-card-content class="wrapBox" [style.display]="i==0 ? 'block': 'none'">
-    <div class="togClass">
-    <p> <strong>Department:</strong> {{doctor.dept}} </p>
-     <p> <strong>Location:</strong> {{doctor.location}} </p>
-       <p> <strong>Phone:</strong> {{doctor.phone}} </p>
+    <ion-card class="appontCard" *ngFor="let appointment of filterTodayAppointments; let i = index">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="assets/img/thumb.png">
+        </ion-avatar>
+        <ion-label class="cardDescrip">
+          <h2>{{appointment.appttime | date: 'MMMM dd, yyyy - hh:mma'}}</h2>
+          <p> {{appointment.doctor.name}}</p>
+          <p> {{appointment.doctor.title}}</p>
+        </ion-label>
+        <ion-label item-right class="cardButton">
+          <button class="mapRedBtn" (click)="openModal()">Map It</button>
+        </ion-label>
+      </ion-item>
+      <div class="upcomingClick" (click)="collapse($event)" [class.upcomingDown]="i==0"></div>
+      <ion-card-content class="wrapBox" [style.display]="i==0 ? 'block': 'none'">
+        <div class="togClass">
+          <p> <strong>Department:</strong> {{appointment.doctor.dept}} </p>
+          <p> <strong>Location:</strong> {{appointment.doctor.location}} </p>
+          <p> <strong>Phone:</strong> {{appointment.doctor.phone}} </p>
 
-       </div>
-    </ion-card-content>
-  </ion-card>
-
-
-
-  <h4 class="appointLable hadTopspace">Upcoming</h4>
-
-   <ion-card class="appontCard" *ngFor="let doctor of filterAppointments">
-   <ion-item>
-     <ion-avatar item-left>
-    <img src="assets/img/thumb.png">
-    </ion-avatar>
-       <ion-label class="cardDescrip">
-     <h2>{{doctor.appointment.appttime}}</h2>
-   <p> {{doctor.name}}</p>
-    <p> {{doctor.title}}</p>
-      </ion-label>
-      <ion-label item-right class="cardButton">
-    <button class="mapRedBtn" (click)="openModal()">Map It</button>
-    </ion-label>
-  </ion-item>
-  <div class="upcomingClick" (click)="collapse($event)"></div>
-  <ion-card-content class="wrapBox">
-    <div class="togClass">
-     <p> <strong>Department:</strong> {{doctor.dept}} </p>
-     <p> <strong>Location:</strong> {{doctor.location}} </p>
-       <p> <strong>Phone:</strong> {{doctor.phone}} </p>
-
-       </div>
-    </ion-card-content>
-  </ion-card>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
 
-<p></p>
+    <h4 class="appointLable hadTopspace" *ngIf="filterUpcomingAppointments == 0">Upcoming - No Scheduled Appointments</h4>
+    <h4 class="appointLable hadTopspace" *ngIf="filterUpcomingAppointments != 0">Upcoming</h4>
+    <ion-card class="appontCard" *ngFor="let appointment of filterUpcomingAppointments">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="assets/img/thumb.png">
+        </ion-avatar>
+        <ion-label class="cardDescrip">
+          <h2>{{appointment.appttime | date: 'MMMM dd, yyyy - hh:mma'}}</h2>
+          <p> {{appointment.doctor.name}}</p>
+          <p> {{appointment.doctor.title}}</p>
+        </ion-label>
+        <ion-label item-right class="cardButton">
+          <button class="mapRedBtn" (click)="openModal()">Map It</button>
+        </ion-label>
+      </ion-item>
+      <div class="upcomingClick" (click)="collapse($event)"></div>
+      <ion-card-content class="wrapBox">
+        <div class="togClass">
+          <p> <strong>Department:</strong> {{appointment.doctor.dept}} </p>
+          <p> <strong>Location:</strong> {{appointment.doctor.location}} </p>
+          <p> <strong>Phone:</strong> {{appointment.doctor.phone}} </p>
 
-</div>
- <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+    <p></p>
+
+  </div>
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>

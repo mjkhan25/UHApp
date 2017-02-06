@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, AlertController, NavParams } from 'ionic-angular';
+import { NavController, ModalController, AlertController, NavParams, LoadingController } from 'ionic-angular';
 import { modalComponent } from '../modalComponent/modalComponent';
 import { Appointment } from '../../modal/appointmentModal';
 import { AppointmentService } from '../../services/appointmentService';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { UserInformation } from '../../constants/user.information';
 import { Observable } from 'rxjs/Observable';
-import {DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 declare var jQuery: any;
 
@@ -24,35 +24,42 @@ export class appointmentsComponent {
   queriedItems: any[];
   appointments: any[];
   doctors: any[];
-  filterDoctors: any[];
+  filterAppointments: any[];
   patientId: string;
-  filterTodayAppointments:any[];
-  filterAppointments:any[];
+  filterTodayAppointments: any[];
+  filterUpcomingAppointments: any[];
   todayTitle: string;
-  setDob:string;
+  setDob: string;
   constructor(
     public navCtrl: NavController,
     private modalCtrl: ModalController,
     public appointmentService: AppointmentService,
     public alertCtrl: AlertController, public af: AngularFire,
-    private navParams: NavParams
+    private navParams: NavParams,
+    private loadingCtrl: LoadingController
   ) {
+    // Add text loading popup
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading ...'
+    });
+    // Show the loading  popup
+    loadingPopup.present();
 
     // start firebase Appointment code
     this.patientId = UserInformation.patientID;
-    this.todayTitle='Today';
+    this.todayTitle = 'Today';
     var appointmentObservable = this.af.database.list('/appointments', {
       query: {
         orderByChild: 'patientId',
         equalTo: this.patientId,
       }
+
     });
 
     appointmentObservable.subscribe(value => {
-
       this.appointments = value;
-
       this.getAllDoctor();
+      loadingPopup.dismiss();
     })
 
 
@@ -60,50 +67,55 @@ export class appointmentsComponent {
 
 
   getAllDoctor() {
-    this.filterDoctors = [];
+    this.filterAppointments = [];
     this.filterTodayAppointments = [];
-    this.filterAppointments=[];
+    this.filterUpcomingAppointments = [];
     var queryObservable = this.af.database.list('/doctors');
     queryObservable.subscribe(queriedItems => {
       this.doctors = queriedItems;
 
-      this.appointments.forEach(appointmentsElement => {
-        this.doctors.forEach(doctorsElement => {
-          if (appointmentsElement.doctorId == doctorsElement.$key) {
-            doctorsElement.appointment = appointmentsElement;
-            this.filterDoctors.push(doctorsElement);
-          }
+      // this.appointments.forEach(appointmentsElement => {
+      //   this.doctors.forEach(doctorsElement => {
+      //     if (appointmentsElement.doctorId == doctorsElement.$key) {
+      //       doctorsElement.appointment = appointmentsElement;
+      //       this.filterDoctors.push(doctorsElement);
 
+      //     }
+
+      //   });
+      // });
+
+      this.doctors.forEach(doctorElement => {
+        this.appointments.forEach(appointmentElement => {
+          if (appointmentElement.doctorId == doctorElement.$key) {
+            appointmentElement.doctor = doctorElement;
+            this.filterAppointments.push(appointmentElement);
+
+          }
         });
       });
 
-this.filterDoctors.forEach(doctorsElement => {
-var datePipeApp = new DatePipe('en-US');
-var datePipe = new DatePipe('en-US');
-console.log("----------------------------------");
-console.log(JSON.stringify(doctorsElement));
-console.log("----------------------------------");
-console.log(JSON.stringify(doctorsElement.appointment));
-console.log("----------------------------------");
-console.log(JSON.stringify(doctorsElement.appointment.appttime));
-console.log("----------------------------------");
+      this.filterAppointments.forEach(appointment => {
+        var dateEnUS = new DatePipe('en-US');
+        this.setDob = dateEnUS.transform(appointment.appttime, 'dd/MM/yyyy');
+        let today = dateEnUS.transform(new Date(), 'dd/MM/yyyy');
 
-this.setDob = datePipeApp.transform(doctorsElement.appointment.appttime, 'dd/MM/yyyy');
-console.log(this.setDob);
-console.log("----------------------------------");
-  if (this.setDob === datePipe.transform(new Date(),'dd/MM/yyyy')) {
-  console.log("yes");
-  this.filterTodayAppointments.push(doctorsElement);
-  }
-else if(this.setDob > datePipe.transform(new Date(),'dd/MM/yyyy'))
-{
-this.filterAppointments.push(doctorsElement);
-}
-});
-if(this.filterTodayAppointments.length<0)
-this.todayTitle="No today";
-console.log("array:"+JSON.stringify(this.filterTodayAppointments));
-    });
+        console.log('setDob : ' + this.setDob + ' ' + today);
+
+        if (this.setDob === today) {
+          console.log('OK : setDob : ' + this.setDob + ' ' + appointment.name);
+          this.filterTodayAppointments.push(appointment);
+        }
+        else if (this.setDob > today) {
+          console.log('NOK : setDob : ' + this.setDob + ' ' + appointment.name);
+          this.filterUpcomingAppointments.push(appointment);
+        }
+      });
+      //console.log("array:" + this.filterTodayAppointments.length);
+      if (this.filterTodayAppointments.length < 0)
+        this.todayTitle = "No today";
+      });
+
   }
 
 
