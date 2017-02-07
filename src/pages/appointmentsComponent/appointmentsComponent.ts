@@ -14,7 +14,7 @@ declare var jQuery: any;
 @Component({
   selector: 'appointmentsComponent',
   templateUrl: 'appointmentsComponent.html',
-  providers: [AppointmentService]
+  providers: [AppointmentService]  
 })
 export class appointmentsComponent {
 
@@ -67,13 +67,15 @@ export class appointmentsComponent {
 
 
   getAllDoctor() {
-    this.filterAppointments = [];
-    this.filterTodayAppointments = [];
-    this.filterUpcomingAppointments = [];
+    
     var queryObservable = this.af.database.list('/doctors');
     queryObservable.subscribe(queriedItems => {
+      this.doctors = [];
+      this.filterAppointments = [];
+      this.filterTodayAppointments = [];
+      this.filterUpcomingAppointments = [];
       this.doctors = queriedItems;
-
+    
       // this.appointments.forEach(appointmentsElement => {
       //   this.doctors.forEach(doctorsElement => {
       //     if (appointmentsElement.doctorId == doctorsElement.$key) {
@@ -95,19 +97,24 @@ export class appointmentsComponent {
         });
       });
 
+      this.filterTodayAppointments=[];
+      this.filterUpcomingAppointments=[];
       this.filterAppointments.forEach(appointment => {
+       
         var dateEnUS = new DatePipe('en-US');
         this.setDob = dateEnUS.transform(appointment.appttime, 'dd/MM/yyyy');
         let today = dateEnUS.transform(new Date(), 'dd/MM/yyyy');
 
-        console.log('setDob : ' + this.setDob + ' ' + today);
+        //console.log('setDob : ' + this.setDob + ' ' + today);
 
         if (this.setDob === today) {
           console.log('OK : setDob : ' + this.setDob + ' ' + appointment.name);
+         appointment.appttime=new Date(appointment.appttime);
           this.filterTodayAppointments.push(appointment);
         }
         else if (this.setDob > today) {
-          console.log('NOK : setDob : ' + this.setDob + ' ' + appointment.name);
+          //console.log('NOK : setDob : ' + this.setDob + ' ' + appointment.name);
+          appointment.appttime=new Date(appointment.appttime);
           this.filterUpcomingAppointments.push(appointment);
         }
       });

@@ -22,6 +22,8 @@ import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent'
 import { SafePipe } from '../pages/uhVideosComponent/uhVideosComponent';
 //import { firebase } from 'firebase-angular2/core';
 import { AngularFireModule } from 'angularfire2';
+import { OrderByPipe } from '../pipes/orderby.pipe'
+
 
 // YOUR SETTINGS GOES HERE!
 export const firebaseConfig = {
@@ -52,7 +54,8 @@ export const firebaseConfig = {
     uhNewsComponent,
     uhNewsDescriptionComponent,
     uhVideosComponent,
-    SafePipe
+    SafePipe,
+    OrderByPipe
     //firebase
 
   ],

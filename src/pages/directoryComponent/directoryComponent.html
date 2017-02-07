@@ -18,7 +18,7 @@
 <ion-content padding class="scrolltopSpace">
 <div class="directoryHold">
 
-<ion-card *ngFor="let directoryFind of directorySearchData">
+<ion-card *ngFor="let directoryFind of directorySearchData | orderBy:['menuLabel']">
 <ion-item (click)="directoryDetails(directoryFind.onclick)" >
     <ion-label item-left class="textBlock">
       {{directoryFind.menuLabel}}

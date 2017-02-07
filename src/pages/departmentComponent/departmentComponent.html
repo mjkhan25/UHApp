@@ -20,7 +20,7 @@
  
 <div class="departmentList">
 
-<ion-card *ngFor="let department of departmentSearchData">
+<ion-card *ngFor="let department of departmentSearchData  | orderBy:['destinationname']">
  <ion-item>
   <ion-label class="textBlock">
      {{department.destinationname}}
