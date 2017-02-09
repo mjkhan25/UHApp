@@ -20,8 +20,8 @@
     <ion-card class="appontCard" *ngFor="let appointment of filterTodayAppointments | orderBy:['appttime']; let i = index">
       <ion-item>
         <ion-avatar item-left>
-          <img src="assets/img/thumb.png">
-          <!-- <img [src]="{{appointment.doctor.image}}" />-->
+          <!--<img src="assets/img/thumb.png">-->
+          <img [src]="appointment.imageUrl" />
         </ion-avatar>
         <ion-label class="cardDescrip">
           <h2>{{appointment.appttime | date: 'MMMM dd, yyyy - hh:mma'}}</h2>
@@ -49,7 +49,7 @@
     <ion-card class="appontCard" *ngFor="let appointment of filterUpcomingAppointments | orderBy:['appttime']">
       <ion-item>
         <ion-avatar item-left>
-          <img src="assets/img/thumb.png">
+          <img [src]="appointment.imageUrl" />
         </ion-avatar>
         <ion-label class="cardDescrip">
           <h2>{{appointment.appttime | date: 'MMMM dd, yyyy - hh:mma'}}</h2>

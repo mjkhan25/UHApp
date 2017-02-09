@@ -108,13 +108,16 @@ export class appointmentsComponent {
         //console.log('setDob : ' + this.setDob + ' ' + today);
 
         if (this.setDob === today) {
-          console.log('OK : setDob : ' + this.setDob + ' ' + appointment.name);
+         // console.log('OK : setDob : ' + this.setDob + ' ' + JSON.stringify(appointment));
+
          appointment.appttime=new Date(appointment.appttime);
+         appointment.imageUrl = "https://firebasestorage.googleapis.com/v0/b/uhmobileadmin.appspot.com/o/Doctors%2F"+ appointment.doctor.name.replace(',','').replace(/ /g, '')+".png?alt=media&token=48340fb6-af58-4e24-9fee-a21b6e25a3bc";
           this.filterTodayAppointments.push(appointment);
         }
         else if (this.setDob > today) {
           //console.log('NOK : setDob : ' + this.setDob + ' ' + appointment.name);
           appointment.appttime=new Date(appointment.appttime);
+          appointment.imageUrl = "https://firebasestorage.googleapis.com/v0/b/uhmobileadmin.appspot.com/o/Doctors%2F"+ appointment.doctor.name.replace(',','').replace(/ /g, '')+".png?alt=media&token=48340fb6-af58-4e24-9fee-a21b6e25a3bc";
           this.filterUpcomingAppointments.push(appointment);
         }
       });

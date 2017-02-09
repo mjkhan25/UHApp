@@ -20,9 +20,12 @@ import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
 import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent';
 import { SafePipe } from '../pages/uhVideosComponent/uhVideosComponent';
+import { checkinModal } from '../pages/checkinModal/checkinModal';
 //import { firebase } from 'firebase-angular2/core';
 import { AngularFireModule } from 'angularfire2';
-import { OrderByPipe } from '../pipes/orderby.pipe'
+import { OrderByPipe } from '../pipes/orderby.pipe';
+
+
 
 
 // YOUR SETTINGS GOES HERE!
@@ -55,10 +58,11 @@ export const firebaseConfig = {
     uhNewsDescriptionComponent,
     uhVideosComponent,
     SafePipe,
+    checkinModal,
     OrderByPipe
-    //firebase
-
+ 
   ],
+  
   imports: [
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig)
@@ -81,7 +85,8 @@ export const firebaseConfig = {
     appointmentPrepComponent,
     uhNewsComponent,
     uhNewsDescriptionComponent,
-    uhVideosComponent
+    uhVideosComponent,
+    checkinModal
 
   ],
   providers: [{provide: [ErrorHandler, LoginService,AppointmentService], useClass: IonicErrorHandler}]

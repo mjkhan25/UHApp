@@ -1,0 +1,72 @@
+checkInModal {
+
+}
+
+.topPad0{padding-top:0}
+.topMarg0{margin-top:0px;}
+.topPad0 p{margin:10px; padding:0px;}
+.rightTick{ background: url('../assets/img/rightTick.png') no-repeat 0px 0; display: inline; padding:0px 0px 5px 35px; }
+
+
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+$size: 75px;
+$fontSize: ($size/4);
+.progress-pie-chart {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  &.gt-50 {
+    background-color: #ef3e42;
+  }
+}
+.ppc-progress {
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .ppc-progress-fill {
+    @include circle($size);
+    clip: rect(0, #{$size/2}, $size, 0);
+    background: #ef3e42;
+    transform: rotate(360deg);
+  }
+  .gt-50 & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .ppc-progress-fill {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: #E5E5E5;
+    }
+  }
+}
+.ppc-percents {
+  @include circle(#{$size/1.15});
+  /*background: #fff;*/
+   background: url('../assets/img/checkinBg.png') no-repeat 0px 0;
+  text-align: center;
+  display: table;
+  span {
+    display: block;
+    font-size: $fontSize;
+    font-weight: bold;
+    color: #ef3e42;
+  }
+  .personName{font-size:11px; color:#666}
+}
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.progress-pie-chart {
+  margin: 10px auto 0;
+}
+

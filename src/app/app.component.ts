@@ -19,6 +19,7 @@ import { appointmentPrepComponent } from '../pages/appointmentPrepComponent/appo
 import { uhNewsComponent } from '../pages/uhNewsComponent/uhNewsComponent';
 import { uhNewsDescriptionComponent } from '../pages/uhNewsDescriptionComponent/uhNewsDescriptionComponent';
 import { uhVideosComponent } from '../pages/uhVideosComponent/uhVideosComponent';
+import { checkinModal } from '../pages/checkinModal/checkinModal';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +28,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = homeComponent;
-  //rootPage: any = appointmentsComponent;
+  //rootPage: any = aboutComponent;
   pages: Array<{title: string, component: any, sidebarclassname:string}>;
 
   constructor(public platform: Platform, private app: App) {
