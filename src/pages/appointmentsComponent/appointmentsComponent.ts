@@ -7,6 +7,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import { UserInformation } from '../../constants/user.information';
 import { Observable } from 'rxjs/Observable';
 import { DatePipe } from '@angular/common';
+import { checkinModal } from '../checkinModal/checkinModal';
 
 declare var jQuery: any;
 
@@ -28,8 +29,11 @@ export class appointmentsComponent {
   patientId: string;
   filterTodayAppointments: any[];
   filterUpcomingAppointments: any[];
+  doctorAndAppointmentDetail:any;
   todayTitle: string;
+  checkinModalshow:boolean;
   setDob: string;
+  
   constructor(
     public navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -66,6 +70,7 @@ export class appointmentsComponent {
   }
 
 
+
   getAllDoctor() {
     
     var queryObservable = this.af.database.list('/doctors');
@@ -86,6 +91,8 @@ export class appointmentsComponent {
 
       //   });
       // });
+
+
 
       this.doctors.forEach(doctorElement => {
         this.appointments.forEach(appointmentElement => {
@@ -121,6 +128,19 @@ export class appointmentsComponent {
           this.filterUpcomingAppointments.push(appointment);
         }
       });
+      // below code for check in check out
+this.checkinModalshow=false;
+
+if (this.filterTodayAppointments.length != 0) {
+this.appointments.forEach(appointmentsElement => {
+       
+          if (appointmentsElement.state == 1 && this.checkinModalshow==false) {
+this.checkedInModal(); 
+this.checkinModalshow=true;
+          }
+      });
+      }
+
       //console.log("array:" + this.filterTodayAppointments.length);
       if (this.filterTodayAppointments.length < 0)
         this.todayTitle = "No today";
@@ -141,6 +161,23 @@ export class appointmentsComponent {
     }
     jQuery(_current).next('.wrapBox').slideToggle();
   }
+
+
+   // 1 Please Check in modal call method
+  openCheckinModal(index :number) {
+  this.doctorAndAppointmentDetail = this.filterTodayAppointments[index];
+//console.log(JSON.stringify(this.doctorAndAppointmentDetail));
+    let profileModal = this.modalCtrl.create(checkinModal);
+    profileModal.present();
+  }
+
+ // 2   Checked In Modal
+  checkedInModal() {
+    let profileModal = this.modalCtrl.create(checkinModal);
+    profileModal.present();
+  }
+
+
 
   //modal call method
   openModal() {

@@ -6,7 +6,7 @@ checkInModal {
 .topMarg0{margin-top:0px;}
 .topPad0 p{margin:10px; padding:0px;}
 .rightTick{ background: url('../assets/img/rightTick.png') no-repeat 0px 0; display: inline; padding:0px 0px 5px 35px; }
-
+.padLeft10{padding-left:10px;}
 
 @mixin circle($size) {
   content: "";

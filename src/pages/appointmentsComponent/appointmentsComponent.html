@@ -29,7 +29,7 @@
           <p> {{appointment.doctor.title}}</p>
         </ion-label>
         <ion-label item-right class="cardButton">
-          <button class="mapRedBtn" (click)="openModal()">Map It</button>
+          <button class="mapRedBtn" (click)="openCheckinModal(i)">Map It</button>
         </ion-label>
       </ion-item>
       <div class="upcomingClick" (click)="collapse($event)" [class.upcomingDown]="i==0"></div>
